@@ -1,26 +1,32 @@
 <script setup lang="ts">
 import TheGenerator from "@/components/TheGenerator.vue";
 import GeneratorPreview from "@/components/GeneratorPreview.vue";
-
 </script>
 
 <template>
+  <div class="h-screen grid justify-items-center items-center">
+    <div class="grid grid-cols-2 w-full">
+      <div class="flex flex-col gap-4">
+        <h1 class="text-xl w-full bg-base-200 p-4 rounded-box text-center">Email Footer Generator</h1>
 
-  <main class="min-h-screen">
-    <div class="h-screen grid grid-rows-2lg:grid-flow-cols lg:grid-cols-2 lg:grid-cols-[1fr 1fr]">
-      <div class="bg-base-300 lg:h-screen p-3 lg:p-5  overflow-y-auto">
-        <h1 class="text-2xl pb-4">Email Footer Generator</h1>
-        <TheGenerator />
+        <div class="bg-base-200 rounded-box p-10 w-full gap-6">
+          <TheGenerator/>
+        </div>
+
+        <div class="w-full bg-base-200 p-4 rounded-box text-center">
+          <a class="link text-center">Settings</a>
+        </div>
+        <div class="divider"></div>
+        <div class="w-full bg-base-200 p-4 rounded-box text-center">2025 &copy; Hubert Lipiński</div>
       </div>
-      <div class="lg:h-screen">
+      <div class="">
         <GeneratorPreview/>
       </div>
     </div>
-  </main>
+  </div>
 
 </template>
 
 <style>
-@import "tailwindcss";
-@plugin "daisyui";
+
 </style>

@@ -3,79 +3,26 @@
 </script>
 
 <template>
-  <table width="100%" border="0" cellspacing="0" cellpadding="0"
-         style="max-width: 600px; font-family: Arial, sans-serif;" v-show="false">
+  <table style="width:100%; max-width:600px; font-family: Arial, sans-serif; background-color: #ffffff;">
     <tr>
-      <td align="center" style="padding: 10px; background-color: #f4f4f4;">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" style="padding: 10px;">
-              <strong>Twoje Imię i Nazwisko</strong><br>
-              <span style="color: #666;">Stanowisko | Firma</span><br>
-              <a href="mailto:email@twojafirma.com" style="color: #007bff; text-decoration: none;">email@twojafirma.com</a><br>
-              <a href="tel:+48123456789" style="color: #007bff; text-decoration: none;">+48 123 456
-                789</a>
-            </td>
-            <td align="right" style="padding: 10px;">
-              <img src="https://placehold.co/600x400" alt="Logo firmy" width="100"
-                   style="max-width: 100px;">
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" align="center" style="padding: 10px; font-size: 12px; color: #666;">
-              &copy; 2024 Twoja Firma. Wszelkie prawa zastrzeżone.<br>
-              <a href="https://www.twojafirma.com" style="color: #007bff; text-decoration: none;">www.twojafirma.com</a>
-            </td>
-          </tr>
-        </table>
+      <td style="padding: 10px; text-align: left; color: #000000">
+        <p style="margin: 0; font-size: 16px; font-weight: bold;">Jan Kowalski</p>
+        <p style="margin: 5px 0; font-size: 14px; color: #555;">Stanowisko | Firma</p>
       </td>
     </tr>
-  </table>
-
-
-  <table width="100%" border="0" cellspacing="0" cellpadding="0"
-         style="max-width: 600px; font-family: Arial, sans-serif;" v-show="true">
     <tr>
-      <td align="center" style="padding: 10px; background-color: #f4f4f4;">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" style="padding: 10px;">
-              <strong>Twoje Imię i Nazwisko</strong><br>
-              <span style="color: #666;">Stanowisko | Firma</span><br>
-              <a href="mailto:email@twojafirma.com" style="color: #007bff; text-decoration: none;">email@twojafirma.com</a><br>
-              <a href="tel:+48123456789" style="color: #007bff; text-decoration: none;">+48 123 456
-                789</a>
-            </td>
-            <td align="right" style="padding: 10px;">
-              <img src="https://placehold.co/600x400" alt="Logo firmy" width="100"
-                   style="max-width: 100px;">
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" align="center" style="padding: 10px; font-size: 12px; color: #666;">
-              &copy; 2024 Twoja Firma. Wszelkie prawa zastrzeżone.<br>
-              <a href="https://www.twojafirma.com" style="color: #007bff; text-decoration: none;">www.twojafirma.com</a>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2" align="center" style="padding: 10px; text-align: center;">
-              <span style="display: inline-block;">
-                  <a href="https://www.facebook.com/twojafirma"
-                     style="margin: 0 5px; display: inline-block;"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                    alt="Facebook" width="20"></a>
-                  <a href="https://twitter.com/twojafirma"
-                     style="margin: 0 5px; display: inline-block;"><img
-                    src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg"
-                    alt="Twitter" width="20"></a>
-                  <a href="https://www.linkedin.com/company/twojafirma"
-                     style="margin: 0 5px; display: inline-block;"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn" width="20"></a>
-              </span>
-            </td>
-          </tr>
-        </table>
+      <td style="padding: 10px; text-align: left; background-color: #ffffff;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <a href="https://linkedin.com/in/twojprofil" style="text-decoration: none;">
+            <img src="https://cdn-icons-png.flaticon.com/24/145/145807.png" alt="LinkedIn" width="24" height="24">
+          </a>
+          <a href="https://facebook.com/twojprofil" style="text-decoration: none;">
+            <img src="https://cdn-icons-png.flaticon.com/24/145/145802.png" alt="Facebook" width="24" height="24">
+          </a>
+          <a href="https://twitter.com/twojprofil" style="text-decoration: none;">
+            <img src="https://cdn-icons-png.flaticon.com/24/145/145812.png" alt="Twitter" width="24" height="24">
+          </a>
+        </div>
       </td>
     </tr>
   </table>
