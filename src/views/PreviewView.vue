@@ -1,6 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
+  <!-- TODO: Component -->
   <div class="bg-card rounded-lg">
     <h2 class="text-xl font-semibold mb-4">Preview</h2>
     <div class="border rounded-md p-6">

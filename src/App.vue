@@ -32,7 +32,7 @@ import LanguageController from '@/components/LanguageController.vue'
       </div>
 
       <div class="w-full bg-base p-4 rounded-box text-center text-gray-500">
-        &copy; 2025 by Hubert Lipiński
+        &copy; {{ new Date().getFullYear() }} by Hubert Lipiński
       </div>
     </div>
   </div>
