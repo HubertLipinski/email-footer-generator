@@ -1,8 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <table
-    style="width: 100%; max-width: 600px; font-family: Arial, sans-serif; background-color: #ffffff"
+    style="width: 100%; font-family: Arial, sans-serif; background-color: #ffffff"
   >
     <tr>
       <td style="padding: 10px; text-align: left; color: #000000">
