@@ -1,32 +1,39 @@
 <script setup lang="ts">
-import TheGenerator from "@/components/TheGenerator.vue";
-import GeneratorPreview from "@/components/GeneratorPreview.vue";
+import ThemeController from '@/components/ThemeController.vue'
+import LanguageController from '@/components/LanguageController.vue'
 </script>
 
 <template>
-  <div class="h-screen grid justify-items-center items-center">
-    <div class="grid grid-cols-2 w-full">
-      <div class="flex flex-col gap-4">
-        <h1 class="text-xl w-full bg-base-200 p-4 rounded-box text-center">Email Footer Generator</h1>
-
-        <div class="bg-base-200 rounded-box p-10 w-full gap-6">
-          <TheGenerator/>
+  <div class="h-screen grid items-center">
+    <div class="flex flex-col gap-6 container max-w-3xl mx-auto">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold w-full py-4 rounded-box">Email Footer Generator</h1>
+        <div class="inline-flex gap-x-4">
+          <LanguageController class="w-20" />
+          <ThemeController />
         </div>
-
-        <div class="w-full bg-base-200 p-4 rounded-box text-center">
-          <a class="link text-center">Settings</a>
-        </div>
-        <div class="divider"></div>
-        <div class="w-full bg-base-200 p-4 rounded-box text-center">2025 &copy; Hubert Lipiński</div>
       </div>
-      <div class="">
-        <GeneratorPreview/>
+
+      <div role="tablist" class="tabs tabs-box p-2 swap">
+        <RouterLink to="/" role="tab" class="tab flex-grow" activeClass="tab-active">
+          Editor
+        </RouterLink>
+        <RouterLink to="/preview" role="tab" class="tab flex-grow" activeClass="tab-active">
+          Preview
+        </RouterLink>
+      </div>
+
+      <div class="bg-base-200 rounded-box p-6 w-full gap-6 min-h-[420px]">
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+      </div>
+
+      <div class="w-full bg-base p-4 rounded-box text-center text-gray-500">
+        &copy; 2025 by Hubert Lipiński
       </div>
     </div>
   </div>
-
 </template>
-
-<style>
-
-</style>
