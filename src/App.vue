@@ -15,12 +15,8 @@ import LanguageController from '@/components/LanguageController.vue'
       </div>
 
       <div role="tablist" class="tabs tabs-box p-2 swap">
-        <RouterLink to="/" role="tab" class="tab flex-grow" activeClass="tab-active">
-          Editor
-        </RouterLink>
-        <RouterLink to="/preview" role="tab" class="tab flex-grow" activeClass="tab-active">
-          Preview
-        </RouterLink>
+        <RouterLink to="/" role="tab" class="tab flex-grow" activeClass="tab-active"> Editor </RouterLink>
+        <RouterLink to="/preview" role="tab" class="tab flex-grow" activeClass="tab-active"> Preview </RouterLink>
       </div>
 
       <div class="bg-base-200 rounded-box p-6 w-full gap-6 min-h-[420px]">

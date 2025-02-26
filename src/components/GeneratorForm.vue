@@ -8,7 +8,7 @@ import SocialConfig from '@/components/configuration/SocialConfig.vue'
 <template>
   <div>
     <div class="flex justify-between mb-4 items-center">
-      <h2 class="text-xl font-semibold ">Configure your email footer</h2>
+      <h2 class="text-xl font-semibold">Configure your email footer</h2>
       <a class="btn btn-ghost" @click="() => {}">Dummy data</a>
     </div>
 

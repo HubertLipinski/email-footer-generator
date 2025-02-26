@@ -8,8 +8,8 @@ export type PersonalConfig = {
 
 export type SocialOption = {
   label: unknown
-  placeholder: string,
-  component: unknown,
+  placeholder: string
+  component: unknown
 }
 
 export interface SocialOptions {

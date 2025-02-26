@@ -53,12 +53,44 @@ const { personal, social, config } = storeToRefs(store)
           </tr>
           <tr v-if="config.socialMediaIcons">
             <td>
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
                 <tr>
-                  <td v-if="social.selected.includes('facebook')&& social.facebook" style="padding: 0 10px;"><a :href="social.facebook" target="_blank" style="text-decoration: none;"><img src="https://img.icons8.com/ios-filled/50/000000/facebook.png" alt="Facebook" width="24" height="24"></a></td>
-                  <td v-if="social.selected.includes('twitter')&& social.twitter" style="padding: 0 10px;"><a :href="social.twitter" target="_blank" style="text-decoration: none;"><img src="https://img.icons8.com/ios-filled/50/000000/twitter.png" alt="Twitter" width="24" height="24"></a></td>
-                  <td v-if="social.selected.includes('linkedin')&& social.linkedin" style="padding: 0 10px;"><a :href="social.linkedin" target="_blank" style="text-decoration: none;"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" width="24" height="24"></a></td>
-                  <td v-if="social.selected.includes('instagram') && social.instagram" style="padding: 0 10px;"><a :href="social.instagram" target="_blank" style="text-decoration: none;"><img src="https://img.icons8.com/ios-filled/50/000000/instagram.png" alt="Instagram" width="24" height="24"></a></td>
+                  <td v-if="social.selected.includes('facebook') && social.facebook" style="padding: 0 10px">
+                    <a :href="social.facebook" target="_blank" style="text-decoration: none"
+                      ><img
+                        src="https://img.icons8.com/ios-filled/50/000000/facebook.png"
+                        alt="Facebook"
+                        width="24"
+                        height="24"
+                    /></a>
+                  </td>
+                  <td v-if="social.selected.includes('twitter') && social.twitter" style="padding: 0 10px">
+                    <a :href="social.twitter" target="_blank" style="text-decoration: none"
+                      ><img
+                        src="https://img.icons8.com/ios-filled/50/000000/twitter.png"
+                        alt="Twitter"
+                        width="24"
+                        height="24"
+                    /></a>
+                  </td>
+                  <td v-if="social.selected.includes('linkedin') && social.linkedin" style="padding: 0 10px">
+                    <a :href="social.linkedin" target="_blank" style="text-decoration: none"
+                      ><img
+                        src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
+                        alt="LinkedIn"
+                        width="24"
+                        height="24"
+                    /></a>
+                  </td>
+                  <td v-if="social.selected.includes('instagram') && social.instagram" style="padding: 0 10px">
+                    <a :href="social.instagram" target="_blank" style="text-decoration: none"
+                      ><img
+                        src="https://img.icons8.com/ios-filled/50/000000/instagram.png"
+                        alt="Instagram"
+                        width="24"
+                        height="24"
+                    /></a>
+                  </td>
                 </tr>
               </table>
             </td>

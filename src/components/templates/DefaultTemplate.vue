@@ -17,22 +17,40 @@ const { personal, social, config } = storeToRefs(store)
       </td>
     </tr>
     <tr v-if="config.socialMediaIcons">
-      <td style="padding: 10px; text-align: left; background-color: #ffffff;">
-        <table style="border-collapse: collapse;">
+      <td style="padding: 10px; text-align: left; background-color: #ffffff">
+        <table style="border-collapse: collapse">
           <tr>
-            <td style="padding-right: 10px;" v-if="social.linkedin.length">
+            <td style="padding-right: 10px" v-if="social.linkedin.length">
               <a :href="social.linkedin">
-                <img src="https://cdn-icons-png.flaticon.com/24/145/145807.png" alt="LinkedIn" width="24" height="24" style="display: block; border: none;">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/24/145/145807.png"
+                  alt="LinkedIn"
+                  width="24"
+                  height="24"
+                  style="display: block; border: none"
+                />
               </a>
             </td>
-            <td style="padding-right: 10px;" v-if="social.facebook.length">
+            <td style="padding-right: 10px" v-if="social.facebook.length">
               <a :href="social.facebook">
-                <img src="https://cdn-icons-png.flaticon.com/24/145/145802.png" alt="Facebook" width="24" height="24" style="display: block; border: none;">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/24/145/145802.png"
+                  alt="Facebook"
+                  width="24"
+                  height="24"
+                  style="display: block; border: none"
+                />
               </a>
             </td>
             <td v-if="social.twitter.length">
               <a :href="social.twitter">
-                <img src="https://cdn-icons-png.flaticon.com/24/145/145812.png" alt="Twitter" width="24" height="24" style="display: block; border: none;">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/24/145/145812.png"
+                  alt="Twitter"
+                  width="24"
+                  height="24"
+                  style="display: block; border: none"
+                />
               </a>
             </td>
           </tr>
