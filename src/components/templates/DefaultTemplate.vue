@@ -2,9 +2,7 @@
 </script>
 
 <template>
-  <table
-    style="width: 100%; font-family: Arial, sans-serif; background-color: #ffffff"
-  >
+  <table style="width: 100%; font-family: Arial, sans-serif; background-color: #ffffff">
     <tr>
       <td style="padding: 10px; text-align: left; color: #000000">
         <p style="margin: 0; font-size: 16px; font-weight: bold">Jan Kowalski</p>
