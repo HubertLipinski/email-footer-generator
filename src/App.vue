@@ -25,7 +25,7 @@ import LanguageController from '@/components/LanguageController.vue'
 
       <div class="bg-base-200 rounded-box p-6 w-full gap-6 min-h-[420px]">
         <router-view v-slot="{ Component }">
-          <keep-alive>
+          <keep-alive include="GeneratorView">
             <component :is="Component" />
           </keep-alive>
         </router-view>

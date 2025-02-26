@@ -11,9 +11,11 @@ const props = defineProps({
 
 const tabsProvider = inject(injectionKey, {
   withinTabs: false,
-  registerTab: (title: string) => {},
   activeTab: readonly(ref()),
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  registerTab: (title: string) => {},
   activateTab: (title: string) => {},
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 })
 
 if (!tabsProvider.withinTabs) {

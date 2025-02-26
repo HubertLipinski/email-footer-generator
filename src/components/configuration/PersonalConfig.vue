@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { onMounted, useTemplateRef } from 'vue'
 
 const store = useConfiguratorStore()
 const { personal } = storeToRefs(store)
+
+const el = useTemplateRef<HTMLElement>('firstFormInput')
+
+onMounted(() => {
+  if (el.value) el.value.focus()
+})
 </script>
 
 <template>
@@ -11,32 +18,35 @@ const { personal } = storeToRefs(store)
     <div class="join gap-4">
       <fieldset class="fieldset join-item flex-grow">
         <legend class="fieldset-legend">Name</legend>
-        <input type="text" class="input w-full" placeholder="John Doe" v-model="personal.name" />
-      </fieldset>
-      <fieldset class="fieldset join-item flex-grow">
-        <legend class="fieldset-legend">Position</legend>
         <input
           type="text"
           class="input w-full"
-          placeholder="Software Developer"
-          v-model="personal.position"
+          name="name"
+          placeholder="John Doe"
+          v-model.trim="personal.name"
+          required
+          ref="firstFormInput"
         />
+      </fieldset>
+      <fieldset class="fieldset join-item flex-grow">
+        <legend class="fieldset-legend">Position</legend>
+        <input type="text" class="input w-full" placeholder="Software Developer" v-model.trim="personal.position" />
       </fieldset>
     </div>
 
     <fieldset class="fieldset">
       <legend class="fieldset-legend">Email</legend>
-      <input
-        type="text"
-        class="input w-full"
-        placeholder="johndoe@example.com"
-        v-model="personal.email"
-      />
+      <input type="email" class="input w-full" placeholder="johndoe@example.com" v-model.trim="personal.email" />
     </fieldset>
 
     <fieldset class="fieldset">
       <legend class="fieldset-legend">Company</legend>
-      <input type="text" class="input w-full" placeholder="Company" v-model="personal.company" />
+      <input type="text" class="input w-full" placeholder="Company" v-model.trim="personal.company" />
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend">Website</legend>
+      <input type="url" class="input w-full" placeholder="https://example.com" v-model.trim="personal.website" />
     </fieldset>
   </div>
 </template>
