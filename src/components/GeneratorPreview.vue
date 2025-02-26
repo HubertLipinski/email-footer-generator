@@ -2,17 +2,17 @@
 import DefaultTemplate from '@/components/templates/DefaultTemplate.vue'
 import { nextTick, onMounted, ref, useTemplateRef } from 'vue'
 import { html as beautyHtml } from 'js-beautify'
-import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.min.css";
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-tomorrow.min.css'
 
 const template = useTemplateRef('footerPreview')
 const htmlCode = ref<string>()
 
 onMounted(async () => {
-  // await nextTick()
-
   const dom = template.value as HTMLElement
   const table = dom.getElementsByTagName('table')[0] as HTMLElement
+
+  // TODO: refactor this to composable and delete unwanted vue tags from string
 
   htmlCode.value = beautyHtml(table.outerHTML, {
     indent_size: 4,
@@ -21,7 +21,8 @@ onMounted(async () => {
   })
 
   await nextTick()
-  Prism.highlightAll();
+
+  Prism.highlightAll()
 })
 </script>
 
