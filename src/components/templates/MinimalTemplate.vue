@@ -14,12 +14,12 @@ const { personal, social, config } = storeToRefs(store)
     cellpadding="0"
     border="0"
     style="
-      /*background-color: #f8f9fa;*/
-      padding: 20px;
+      background-color: #f8f9fa;
+      padding: 10px;
       text-align: center;
       border-top: 1px solid #ddd;
       font-family: Arial, sans-serif;
-      max-width: 600px;
+      /*max-width: 600px;*/
       margin: auto;
     "
   >
@@ -27,22 +27,22 @@ const { personal, social, config } = storeToRefs(store)
       <td style="padding: 10px">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
           <tr>
-            <td style="padding-bottom: 10px; font-size: 16px; font-weight: bold">
+            <td style="padding-bottom: 10px; font-size: 16px; font-weight: bold; text-align: center">
               {{ personal.name }}
             </td>
           </tr>
           <tr v-if="personal.position">
-            <td style="padding-bottom: 5px; font-size: 14px">{{ personal.position }}</td>
+            <td style="padding-bottom: 5px; font-size: 14px; text-align: center">{{ personal.position }}</td>
           </tr>
           <tr v-if="personal.email">
-            <td style="padding-bottom: 5px">
+            <td style="padding-bottom: 5px; text-align: center">
               <a :href="`mailto:${personal.email}`" style="color: #007bff; text-decoration: none">
                 {{ personal.email }}
               </a>
             </td>
           </tr>
           <tr v-if="personal.company">
-            <td style="padding-bottom: 5px; font-size: 14px">{{ personal.company }}</td>
+            <td style="padding-bottom: 5px; font-size: 14px; text-align: center">{{ personal.company }}</td>
           </tr>
           <tr v-if="personal.website">
             <td style="padding-bottom: 10px">
