@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { reactive } from 'vue'
 
 const store = useConfiguratorStore()
-const { personal, social, config } = storeToRefs(store)
+const { personal, social, styles, config } = storeToRefs(store)
+
+const bodyStyles = reactive({
+  'font-family': `${styles.value.fontFamily}, sans-serif`,
+  'background-color': styles.value.backgroundColor,
+  'text-align': styles.value.alignment,
+  color: styles.value.textColor,
+  'font-size': `${styles.value.fontSize}px`,
+})
 </script>
 
 <template>
@@ -13,79 +22,79 @@ const { personal, social, config } = storeToRefs(store)
     cellspacing="0"
     cellpadding="0"
     border="0"
-    style="
-      background-color: #f8f9fa;
-      padding: 10px;
-      text-align: center;
-      border-top: 1px solid #ddd;
-      font-family: Arial, sans-serif;
-      /*max-width: 600px;*/
-      margin: auto;
-    "
+    style="padding: 10px; border-top: 1px solid #ddd; margin: auto"
+    :style="bodyStyles"
   >
     <tr>
       <td style="padding: 10px">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" :style="bodyStyles">
           <tr>
-            <td style="padding-bottom: 10px; font-size: 16px; font-weight: bold; text-align: center">
+            <td style="padding-bottom: 10px; font-weight: bold">
               {{ personal.name }}
             </td>
           </tr>
           <tr v-if="personal.position">
-            <td style="padding-bottom: 5px; font-size: 14px; text-align: center">{{ personal.position }}</td>
+            <td style="padding-bottom: 10px">{{ personal.position }}</td>
           </tr>
           <tr v-if="personal.email">
-            <td style="padding-bottom: 5px; text-align: center">
-              <a :href="`mailto:${personal.email}`" style="color: #007bff; text-decoration: none">
+            <td style="padding-bottom: 10px">
+              <a :href="`mailto:${personal.email}`" style="text-decoration: none">
                 {{ personal.email }}
               </a>
             </td>
           </tr>
           <tr v-if="personal.company">
-            <td style="padding-bottom: 5px; font-size: 14px; text-align: center">{{ personal.company }}</td>
+            <td style="padding-bottom: 10px">{{ personal.company }}</td>
           </tr>
           <tr v-if="personal.website">
             <td style="padding-bottom: 10px">
-              <a :href="personal.website" target="_blank" style="color: #007bff; text-decoration: none">
+              <a :href="personal.website" target="_blank" style="text-decoration: none">
                 {{ personal.website }}
               </a>
             </td>
           </tr>
           <tr v-if="config.socialMediaIcons">
             <td>
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
+              <table
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+                :align="styles.alignment"
+                style="margin: auto"
+              >
                 <tr>
-                  <td v-if="social.selected.includes('facebook') && social.facebook" style="padding: 0 10px">
+                  <td v-if="social.selected.includes('facebook') && social.facebook" style="padding-right: 10px">
                     <a :href="social.facebook" target="_blank" style="text-decoration: none"
                       ><img
-                        src="https://img.icons8.com/ios-filled/50/000000/facebook.png"
+                        src="https://api.iconify.design/mdi:facebook-box.svg?color=%231877F2"
                         alt="Facebook"
                         width="24"
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('twitter') && social.twitter" style="padding: 0 10px">
+                  <td v-if="social.selected.includes('twitter') && social.twitter" style="padding-right: 10px">
                     <a :href="social.twitter" target="_blank" style="text-decoration: none"
                       ><img
-                        src="https://img.icons8.com/ios-filled/50/000000/twitter.png"
+                        src="https://api.iconify.design/ri:twitter-x-fill.svg?color=%23000000"
                         alt="Twitter"
                         width="24"
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('linkedin') && social.linkedin" style="padding: 0 10px">
+                  <td v-if="social.selected.includes('linkedin') && social.linkedin" style="padding-right: 10px">
                     <a :href="social.linkedin" target="_blank" style="text-decoration: none"
                       ><img
-                        src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
+                        src="https://api.iconify.design/skill-icons:instagram.svg"
                         alt="LinkedIn"
                         width="24"
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('instagram') && social.instagram" style="padding: 0 10px">
+                  <td v-if="social.selected.includes('instagram') && social.instagram" style="padding-right: 10px">
                     <a :href="social.instagram" target="_blank" style="text-decoration: none"
                       ><img
-                        src="https://img.icons8.com/ios-filled/50/000000/instagram.png"
+                        src="https://api.iconify.design/devicon:linkedin.svg"
                         alt="Instagram"
                         width="24"
                         height="24"

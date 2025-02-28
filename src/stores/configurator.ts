@@ -47,7 +47,13 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     },
   })
 
-  const styles = ref({})
+  const styles = ref({
+    fontFamily: 'Arial',
+    backgroundColor: '#FFFFFF',
+    textColor: '#000000',
+    fontSize: 14,
+    alignment: 'left',
+  })
 
   const config = ref({
     socialMediaIcons: true,
