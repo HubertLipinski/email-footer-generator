@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
-import {computed, reactive} from 'vue'
+import { computed, reactive } from 'vue'
 
 const store = useConfiguratorStore()
 const { personal, social, styles, config } = storeToRefs(store)
@@ -74,7 +74,10 @@ function socialElementStyle(name: string): string | null {
                 style="margin: auto"
               >
                 <tr>
-                  <td v-if="social.selected.includes('facebook') && social.facebook" :style="socialElementStyle('facebook')">
+                  <td
+                    v-if="social.selected.includes('facebook') && social.facebook"
+                    :style="socialElementStyle('facebook')"
+                  >
                     <a :href="social.facebook" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/mdi:facebook-box.svg?color=%231877F2"
@@ -83,7 +86,10 @@ function socialElementStyle(name: string): string | null {
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('twitter') && social.twitter" :style="socialElementStyle('twitter')">
+                  <td
+                    v-if="social.selected.includes('twitter') && social.twitter"
+                    :style="socialElementStyle('twitter')"
+                  >
                     <a :href="social.twitter" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/ri:twitter-x-fill.svg?color=%23000000"
@@ -92,7 +98,10 @@ function socialElementStyle(name: string): string | null {
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('linkedin') && social.linkedin" :style="socialElementStyle('linkedin')">
+                  <td
+                    v-if="social.selected.includes('linkedin') && social.linkedin"
+                    :style="socialElementStyle('linkedin')"
+                  >
                     <a :href="social.linkedin" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/skill-icons:instagram.svg"
@@ -101,7 +110,10 @@ function socialElementStyle(name: string): string | null {
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('instagram') && social.instagram" :style="socialElementStyle('instagram')">
+                  <td
+                    v-if="social.selected.includes('instagram') && social.instagram"
+                    :style="socialElementStyle('instagram')"
+                  >
                     <a :href="social.instagram" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/devicon:linkedin.svg"
