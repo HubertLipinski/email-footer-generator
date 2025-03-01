@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
-import { reactive } from 'vue'
+import {computed, reactive} from 'vue'
 
 const store = useConfiguratorStore()
 const { personal, social, styles, config } = storeToRefs(store)
@@ -13,6 +13,16 @@ const bodyStyles = reactive({
   color: styles.value.textColor,
   'font-size': `${styles.value.fontSize}px`,
 })
+
+const lastSocial = computed(() => social.value.selected[social.value.selected.length - 1])
+
+function socialElementStyle(name: string): string | null {
+  if (name !== lastSocial.value) {
+    return 'padding-right: 10px'
+  }
+
+  return null
+}
 </script>
 
 <template>
@@ -53,7 +63,7 @@ const bodyStyles = reactive({
               </a>
             </td>
           </tr>
-          <tr v-if="config.socialMediaIcons">
+          <tr v-if="config.socialMediaIcons && social.selected.length">
             <td>
               <table
                 role="presentation"
@@ -64,7 +74,7 @@ const bodyStyles = reactive({
                 style="margin: auto"
               >
                 <tr>
-                  <td v-if="social.selected.includes('facebook') && social.facebook" style="padding-right: 10px">
+                  <td v-if="social.selected.includes('facebook') && social.facebook" :style="socialElementStyle('facebook')">
                     <a :href="social.facebook" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/mdi:facebook-box.svg?color=%231877F2"
@@ -73,7 +83,7 @@ const bodyStyles = reactive({
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('twitter') && social.twitter" style="padding-right: 10px">
+                  <td v-if="social.selected.includes('twitter') && social.twitter" :style="socialElementStyle('twitter')">
                     <a :href="social.twitter" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/ri:twitter-x-fill.svg?color=%23000000"
@@ -82,7 +92,7 @@ const bodyStyles = reactive({
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('linkedin') && social.linkedin" style="padding-right: 10px">
+                  <td v-if="social.selected.includes('linkedin') && social.linkedin" :style="socialElementStyle('linkedin')">
                     <a :href="social.linkedin" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/skill-icons:instagram.svg"
@@ -91,7 +101,7 @@ const bodyStyles = reactive({
                         height="24"
                     /></a>
                   </td>
-                  <td v-if="social.selected.includes('instagram') && social.instagram" style="padding-right: 10px">
+                  <td v-if="social.selected.includes('instagram') && social.instagram" :style="socialElementStyle('instagram')">
                     <a :href="social.instagram" target="_blank" style="text-decoration: none"
                       ><img
                         src="https://api.iconify.design/devicon:linkedin.svg"

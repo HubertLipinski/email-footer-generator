@@ -26,7 +26,7 @@ const { socialOptions, social, config } = storeToRefs(store)
           <label
             class="btn btn-outline btn-primary"
             :for="`input-${key}`"
-            :class="{ 'btn-active': social.selected.includes(key) }"
+            :class="{ 'btn-active': social.selected.includes(key as string) }"
           >
             <component :is="option.component" />
             <span class="whitespace-nowrap">{{ option.label }}</span>

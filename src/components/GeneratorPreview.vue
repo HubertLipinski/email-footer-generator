@@ -39,7 +39,7 @@ function downloadHtml() {
       </div>
       <div class="w-full pb-6">
         <iframe :key="renderHash" :srcdoc="iframeSrcDoc" class="w-full" :style="{ height: iframeHeight }" />
-        <span class="text-xs text-neutral-content" v-if="isDevMode">Height: {{ iframeHeight }}</span>
+        <span class="text-xs" v-if="isDevMode">Height: {{ iframeHeight }}</span>
       </div>
       <div class="flex justify-between pb-4">
         <h3>HTML Code</h3>
