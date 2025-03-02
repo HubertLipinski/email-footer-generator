@@ -53,13 +53,13 @@ function downloadHtml() {
       </div>
     </div>
     <div class="mt-6 flex justify-end gap-x-4">
-      <button class="btn btn-soft" @click="downloadHtml">
+      <button class="btn btn-soft w-[120px]" @click="downloadHtml">
         <DownloadIcon v-if="!isDownloading" />
         <SpinIcon v-else />
         {{ isDownloading ? 'Working' : 'Download' }}
       </button>
 
-      <button class="btn" :class="codeCopied ? 'btn-success' : 'btn-primary'" @click="() => copy(htmlString)">
+      <button class="btn w-[95px]" :class="codeCopied ? 'btn-success' : 'btn-primary'" @click="() => copy(htmlString)">
         <CopyIcon />
         {{ codeCopied ? 'Done!' : 'Copy' }}
       </button>

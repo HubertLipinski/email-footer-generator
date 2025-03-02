@@ -4,6 +4,7 @@ import VTabContent from '@/components/ui/vTabContent.vue'
 import PersonalConfig from '@/components/configuration/PersonalConfig.vue'
 import SocialConfig from '@/components/configuration/SocialConfig.vue'
 import StyleConfig from '@/components/configuration/StyleConfig.vue'
+import DisclaimerConfig from "@/components/configuration/DisclaimerConfig.vue";
 </script>
 
 <template>
@@ -23,7 +24,9 @@ import StyleConfig from '@/components/configuration/StyleConfig.vue'
         <StyleConfig />
       </VTabContent>
       <VTabContent title="Setting">Setting Tab</VTabContent>
-      <VTabContent title="Additional">Additional Tab</VTabContent>
+      <VTabContent title="Disclaimer">
+        <DisclaimerConfig />
+      </VTabContent>
     </VTabs>
 
     <button class="btn btn-primary w-full mt-3" type="submit">Generate</button>

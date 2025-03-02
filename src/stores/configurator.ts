@@ -49,7 +49,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
 
   const styles = ref({
     fontFamily: 'Arial',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     textColor: '#000000',
     fontSize: 14,
     alignment: 'left',
@@ -60,9 +60,12 @@ export const useConfiguratorStore = defineStore('configurator', () => {
   })
 
   const additional = ref({
-    customMessage: "Let's connect and discuss how we can work together!",
-    disclaimer:
-      'This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed.',
+    disclaimer: {
+      enabled: true,
+      color: '#a0a0a0',
+      content:
+        'This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed.',
+    },
   })
 
   return { personal, social, socialOptions, styles, config, additional }

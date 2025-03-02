@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { computed, reactive } from 'vue'
 
 const store = useConfiguratorStore()
-const { personal, social, styles, config } = storeToRefs(store)
+const { personal, social, styles, config, additional } = storeToRefs(store)
 
 const bodyStyles = reactive({
   'font-family': `${styles.value.fontFamily}, sans-serif`,
@@ -124,6 +124,11 @@ function socialElementStyle(name: string): string | null {
                   </td>
                 </tr>
               </table>
+            </td>
+          </tr>
+          <tr v-if="additional.disclaimer.enabled">
+            <td>
+              <p style="margin: 10px 0 0;font-size: 0.75em" :style="`color:${additional.disclaimer.color}`">{{additional.disclaimer.content}}</p>
             </td>
           </tr>
         </table>
