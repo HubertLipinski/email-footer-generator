@@ -128,7 +128,9 @@ function socialElementStyle(name: string): string | null {
           </tr>
           <tr v-if="additional.disclaimer.enabled">
             <td>
-              <p style="margin: 10px 0 0;font-size: 0.75em" :style="`color:${additional.disclaimer.color}`">{{additional.disclaimer.content}}</p>
+              <p style="margin: 10px 0 0; font-size: 0.75em" :style="`color:${additional.disclaimer.color}`">
+                {{ additional.disclaimer.content }}
+              </p>
             </td>
           </tr>
         </table>

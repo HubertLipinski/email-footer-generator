@@ -1,22 +1,21 @@
 <script setup lang="ts">
-import {useConfiguratorStore} from "@/stores/configurator.ts";
-import {storeToRefs} from "pinia";
+import { useConfiguratorStore } from '@/stores/configurator.ts'
+import { storeToRefs } from 'pinia'
 
-const store= useConfiguratorStore()
+const store = useConfiguratorStore()
 const { additional } = storeToRefs(store)
 </script>
 
 <template>
-
   <label class="fieldset-label max-w-64 pb-2">
-  <input
-    type="checkbox"
-    :true-value="true"
-    :false-value="false"
-    class="toggle toggle-sm"
-    v-model="additional.disclaimer.enabled"
-  />
-  <span class="pl-2 d-block text-base-content">Show disclaimer</span>
+    <input
+      type="checkbox"
+      :true-value="true"
+      :false-value="false"
+      class="toggle toggle-sm"
+      v-model="additional.disclaimer.enabled"
+    />
+    <span class="pl-2 d-block text-base-content">Show disclaimer</span>
   </label>
 
   <div v-if="additional.disclaimer.enabled">
@@ -33,10 +32,6 @@ const { additional } = storeToRefs(store)
       </div>
     </fieldset>
   </div>
-
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -4,7 +4,7 @@ import VTabContent from '@/components/ui/vTabContent.vue'
 import PersonalConfig from '@/components/configuration/PersonalConfig.vue'
 import SocialConfig from '@/components/configuration/SocialConfig.vue'
 import StyleConfig from '@/components/configuration/StyleConfig.vue'
-import DisclaimerConfig from "@/components/configuration/DisclaimerConfig.vue";
+import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
 </script>
 
 <template>
