@@ -18,10 +18,10 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SocialConfig: typeof import('./src/components/configuration/SocialConfig.vue')['default']
     StyleConfig: typeof import('./src/components/configuration/StyleConfig.vue')['default']
+    TabContent: typeof import('./src/components/ui/tabs/TabContent.vue')['default']
+    TabsWrapper: typeof import('./src/components/ui/tabs/TabsWrapper.vue')['default']
     TheFooter: typeof import('./src/components/ui/TheFooter.vue')['default']
     ThemeController: typeof import('./src/components/ThemeController.vue')['default']
     TheNavbar: typeof import('./src/components/ui/TheNavbar.vue')['default']
-    VTabContent: typeof import('./src/components/ui/vTabContent.vue')['default']
-    VTabs: typeof import('./src/components/ui/vTabs.vue')['default']
   }
 }

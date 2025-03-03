@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, inject, readonly, ref } from 'vue'
-import { injectionKey } from '@/components/ui/vTabs.vue'
+import { injectionKey } from '@/components/ui/tabs/TabsWrapper.vue'
 
 const props = defineProps({
   title: {
@@ -19,7 +19,7 @@ const tabsProvider = inject(injectionKey, {
 })
 
 if (!tabsProvider.withinTabs) {
-  throw new Error('vTab must be used within a vTabs component')
+  throw new Error('Tab must be used within a TabsWrapper component')
 }
 
 tabsProvider.registerTab(props.title)

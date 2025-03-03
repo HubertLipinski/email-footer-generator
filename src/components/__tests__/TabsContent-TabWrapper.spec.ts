@@ -1,25 +1,25 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import vTabs from '@/components/ui/vTabs.vue'
-import VTabContent from '@/components/ui/VTabContent.vue'
+import TabsWrapper from '@/components/ui/tabs/TabsWrapper.vue'
+import TabContent from '@/components/ui/tabs/TabContent.vue'
 
 const wrapperConfig = [
   {
     components: {
-      vTabs,
-      VTabContent,
+      TabsWrapper,
+      TabContent,
     },
-    template: `<div><vTabs>
-      <VTabContent title="Tab 1">
+    template: `<div><TabsWrapper>
+      <TabContent title="Tab 1">
         <p>Tab 1 Content</p>
-      </VTabContent>
-      <VTabContent title="Tab 2">
+      </TabContent>
+      <TabContent title="Tab 2">
         <p>Tab 2 Content</p>
-      </VTabContent>
-      <VTabContent title="Tab 3">
+      </TabContent>
+      <TabContent title="Tab 3">
         <p>Tab 3 Content</p>
-      </VTabContent>
-    </vTabs></div>
+      </TabContent>
+    </TabsWrapper></div>
   `,
   },
   {
@@ -27,7 +27,7 @@ const wrapperConfig = [
   },
 ]
 
-describe('the use of vTabsPanel with vTabs', () => {
+describe('the use of TabsContent with TabsWrapper', () => {
   it('renders the tab titles', async () => {
     const wrapper = mount(wrapperConfig[0], wrapperConfig[1])
     await wrapper.vm.$nextTick()

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import VTabs from '@/components/ui/vTabs.vue'
-import VTabContent from '@/components/ui/vTabContent.vue'
+import TabsWrapper from '@/components/ui/tabs/TabsWrapper.vue'
+import TabContent from '@/components/ui/tabs/TabContent.vue'
 import PersonalConfig from '@/components/configuration/PersonalConfig.vue'
 import SocialConfig from '@/components/configuration/SocialConfig.vue'
 import StyleConfig from '@/components/configuration/StyleConfig.vue'
@@ -13,20 +13,20 @@ import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
       <h2 class="text-xl font-semibold">Configure your email footer</h2>
     </div>
 
-    <VTabs>
-      <VTabContent title="Personal">
+    <TabsWrapper>
+      <TabContent title="Personal">
         <PersonalConfig />
-      </VTabContent>
-      <VTabContent title="Social">
+      </TabContent>
+      <TabContent title="Social">
         <SocialConfig />
-      </VTabContent>
-      <VTabContent title="Styles">
+      </TabContent>
+      <TabContent title="Styles">
         <StyleConfig />
-      </VTabContent>
-      <VTabContent title="Disclaimer">
+      </TabContent>
+      <TabContent title="Disclaimer">
         <DisclaimerConfig />
-      </VTabContent>
-    </VTabs>
+      </TabContent>
+    </TabsWrapper>
   </div>
 </template>
 

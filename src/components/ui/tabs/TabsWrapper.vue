@@ -24,7 +24,7 @@ provide(injectionKey, {
 <script lang="ts">
 import type { InjectionKey, Ref } from 'vue'
 
-export const injectionKey = Symbol('vTabs') as InjectionKey<{
+export const injectionKey = Symbol('TheTabs') as InjectionKey<{
   withinTabs: boolean
   registerTab: (title: string) => void
   activeTab: Readonly<Ref<string | undefined>>
