@@ -31,6 +31,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
 
     output = output.replace(/\s*data-v-[a-f0-9]+=""/g, '')
     output = output.replace(/<!--v-if-->/g, '')
+    output = output.replace(/<!---->/g, '')
 
     return output
   }
