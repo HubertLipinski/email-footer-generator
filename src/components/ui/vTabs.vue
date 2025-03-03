@@ -36,7 +36,7 @@ export const injectionKey = Symbol('vTabs') as InjectionKey<{
   <div class="h-full tabs tabs-border tabs-lg gap-3">
     <a
       role="tab"
-      class="btn btn-soft btn-primary"
+      class="btn btn-soft btn-primary w-[100px]"
       v-for="tab in tabs"
       :class="{ 'btn-active': activeTab === tab }"
       @click="activateTab(tab)"

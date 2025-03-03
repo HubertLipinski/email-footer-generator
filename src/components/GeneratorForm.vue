@@ -27,8 +27,6 @@ import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
         <DisclaimerConfig />
       </VTabContent>
     </VTabs>
-
-    <!--    <button class="btn btn-primary" type="submit">Generate</button>-->
   </div>
 </template>
 

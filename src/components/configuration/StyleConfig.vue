@@ -35,16 +35,28 @@ const { styles } = storeToRefs(store)
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Background Color</legend>
     <div class="inline-flex gap-2">
-      <input type="color" class="input flex-none max-w-18 p-0 m-0 border-0" v-model="styles.backgroundColor" />
-      <input type="text" class="input flex-none max-w-40" v-model="styles.backgroundColor" />
+      <input
+        type="color"
+        id="backgroundColor"
+        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
+        v-model="styles.backgroundColor"
+      />
+      <label for="backgroundColor" class="label text-base-content text-base hover:cursor-text">{{
+        styles.backgroundColor
+      }}</label>
     </div>
   </fieldset>
 
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Text Color</legend>
     <div class="inline-flex gap-2">
-      <input type="color" class="input flex-none max-w-18 p-0 m-0 border-0" v-model="styles.textColor" />
-      <input type="text" class="input flex-none max-w-40" v-model="styles.textColor" />
+      <input
+        type="color"
+        id="textColor"
+        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
+        v-model="styles.textColor"
+      />
+      <label for="textColor" class="label text-base-content text-base hover:cursor-text">{{ styles.textColor }}</label>
     </div>
   </fieldset>
 
