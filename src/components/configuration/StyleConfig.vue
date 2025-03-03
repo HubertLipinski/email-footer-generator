@@ -51,7 +51,7 @@ const { styles } = storeToRefs(store)
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Font Size: {{ styles.fontSize }} px</legend>
     <div class="w-full max-w-xs py-1">
-      <input type="range" min="10" max="20" class="range range-xs" step="1" v-model="styles.fontSize" />
+      <input type="range" min="10" max="20" class="range range-xs range-primary" step="1" v-model="styles.fontSize" />
       <div class="flex justify-between px-2.5 mt-3 text-xs">
         <span v-for="number in 11" :key="number">{{ 9 + number }}</span>
       </div>

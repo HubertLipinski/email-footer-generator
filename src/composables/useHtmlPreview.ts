@@ -5,6 +5,7 @@ import Prism from 'prismjs'
 export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'table') {
   const htmlString = ref<string>('')
   const humanReadable = ref<string>('')
+  const renderHash = ref(crypto.randomUUID())
 
   watchEffect(async () => {
     if (!domElement.value) return
@@ -21,6 +22,8 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     await nextTick()
 
     Prism.highlightAll()
+
+    renderHash.value = crypto.randomUUID()
   })
 
   function stripVueGeneratedTags(html: string): string {
@@ -69,5 +72,6 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     humanReadable,
     iframeSrcDoc,
     iframeHeight,
+    renderHash,
   }
 }

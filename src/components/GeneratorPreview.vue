@@ -39,7 +39,7 @@ function downloadHtml() {
       </div>
       <div class="w-full pb-6">
         <iframe :key="renderHash" :srcdoc="iframeSrcDoc" class="w-full" :style="{ height: iframeHeight }" />
-        <span class="text-xs" v-if="isDevMode">Height: {{ iframeHeight }}</span>
+        <span class="text-xs p-0 m-0" v-if="isDevMode">Height: {{ iframeHeight }}</span>
       </div>
       <div class="flex justify-between pb-4">
         <h3>HTML Code</h3>
@@ -47,9 +47,9 @@ function downloadHtml() {
           <span class="text-secondary px-1">{{ htmlString.length }} characters</span>
         </span>
       </div>
-      <div class="w-full bg-neutral text-sm mr-2 rounded-lg overflow-x-auto text-white focus:outline-none">
-        <pre class="focus:outline-none max-h-[300px] p-2 pl-3 ml-2 my-0"><code
-          class="language-html">{{ humanReadable }}</code></pre>
+      <div class="w-full bg-neutral text-sm rounded-lg text-white focus:outline-none">
+        <pre class="focus:outline-none max-h-[120px] sm:max-h-[300px]"><code
+          class="block min-w-full language-html">{{ humanReadable }}</code></pre>
       </div>
     </div>
     <div class="mt-6 flex justify-end gap-x-4">
@@ -67,7 +67,7 @@ function downloadHtml() {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 pre {
   background: inherit;
 }

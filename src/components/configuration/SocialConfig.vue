@@ -24,7 +24,7 @@ const { socialOptions, social, config } = storeToRefs(store)
         <legend class="fieldset-legend">Select Icons</legend>
         <div v-for="(option, key) in socialOptions" :key="key">
           <label
-            class="btn btn-outline btn-primary"
+            class="btn btn-soft btn-primary"
             :for="`input-${key}`"
             :class="{ 'btn-active': social.selected.includes(key as string) }"
           >

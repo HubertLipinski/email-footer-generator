@@ -33,20 +33,20 @@ export const injectionKey = Symbol('vTabs') as InjectionKey<{
 </script>
 
 <template>
-  <div class="tabs tabs-border">
-    <button
+  <div class="h-full tabs tabs-border tabs-lg gap-3">
+    <a
       role="tab"
-      class="tab"
+      class="btn btn-soft btn-primary"
       v-for="tab in tabs"
-      :class="{ 'tab-active': activeTab === tab }"
+      :class="{ 'btn-active': activeTab === tab }"
       @click="activateTab(tab)"
       :key="tab"
       data-test="tab-title"
     >
       {{ tab }}
-    </button>
+    </a>
 
-    <div class="tab-content min-h-[350px] pt-4">
+    <div class="tab-content pt-4">
       <slot></slot>
     </div>
   </div>

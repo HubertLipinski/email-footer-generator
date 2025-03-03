@@ -39,7 +39,7 @@ function socialElementStyle(name: string): string | null {
       <td style="padding: 10px">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" :style="bodyStyles">
           <tr>
-            <td style="padding-bottom: 10px; font-weight: bold">
+            <td style="padding-bottom: 10px; font-weight: bold; font-size: 1.125em">
               {{ personal.name }}
             </td>
           </tr>

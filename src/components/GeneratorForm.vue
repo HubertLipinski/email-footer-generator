@@ -8,7 +8,7 @@ import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col h-full">
     <div class="flex justify-between mb-4 items-center">
       <h2 class="text-xl font-semibold">Configure your email footer</h2>
     </div>
@@ -23,13 +23,12 @@ import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
       <VTabContent title="Styles">
         <StyleConfig />
       </VTabContent>
-      <VTabContent title="Setting">Setting Tab</VTabContent>
       <VTabContent title="Disclaimer">
         <DisclaimerConfig />
       </VTabContent>
     </VTabs>
 
-    <button class="btn btn-primary w-full mt-3" type="submit">Generate</button>
+    <!--    <button class="btn btn-primary" type="submit">Generate</button>-->
   </div>
 </template>
 
