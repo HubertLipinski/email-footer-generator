@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, inject, readonly, ref } from 'vue'
-import { injectionKey } from './vTabs.vue'
+import { injectionKey } from '@/components/ui/vTabs.vue'
 
 const props = defineProps({
   title: {
