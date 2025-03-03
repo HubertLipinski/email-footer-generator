@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import vTabs from '../ui/vTabs.vue'
-import VTabContent from '../ui/VTabContent.vue'
+import vTabs from '@/components/ui/vTabs.vue'
+import VTabContent from '@/components/ui/VTabContent.vue'
 
 const wrapperConfig = [
   {
