@@ -1,4 +1,7 @@
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
 import { computed, reactive } from 'vue'

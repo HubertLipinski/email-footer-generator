@@ -16,7 +16,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     website: '',
   })
 
-  const social = ref({
+  const social = ref<Record<string, string | string[]>>({
     selected: ['facebook', 'twitter'],
     facebook: 'https://facebook.com/',
     twitter: 'https://x.com/',
