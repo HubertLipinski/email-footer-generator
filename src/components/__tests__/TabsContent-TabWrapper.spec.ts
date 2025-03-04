@@ -56,8 +56,8 @@ describe('the use of TabsContent with TabsWrapper', () => {
     const wrapper = mount(wrapperConfig[0], wrapperConfig[1])
     await wrapper.vm.$nextTick()
 
-    const firstPanel = wrapper.find(`[data-test="tab-content"]:nth-child(1)`)
-    const secondPanel = wrapper.find(`[data-test="tab-content"]:nth-child(2)`)
+    const firstPanel = wrapper.findAll(`[data-test="tab-content"]`)[0]
+    const secondPanel = wrapper.findAll(`[data-test="tab-content"]`)[1]
 
     expect(firstPanel.isVisible()).toBe(true)
     expect(secondPanel.isVisible()).toBe(false)
@@ -67,14 +67,14 @@ describe('the use of TabsContent with TabsWrapper', () => {
     const wrapper = mount(wrapperConfig[0], wrapperConfig[1])
     await wrapper.vm.$nextTick()
 
-    await wrapper.find(`[data-test="tab-title"]:nth-child(2)`).trigger('click')
+    await wrapper.findAll(`[data-test="tab-title"]`)[1].trigger('click')
     await wrapper.vm.$nextTick()
-    expect(wrapper.find(`[data-test="tab-content"]:nth-child(2)`).isVisible()).toBe(true)
-    expect(wrapper.find(`[data-test="tab-content"]:nth-child(1)`).isVisible()).toBe(false)
+    expect(wrapper.findAll(`[data-test="tab-content"]`)[1].isVisible()).toBe(true)
+    expect(wrapper.findAll(`[data-test="tab-content"]`)[0].isVisible()).toBe(false)
 
-    await wrapper.find(`[data-test="tab-title"]:nth-child(3)`).trigger('click')
+    await wrapper.findAll(`[data-test="tab-title"]`)[2].trigger('click')
     await wrapper.vm.$nextTick()
-    expect(wrapper.find(`[data-test="tab-content"]:nth-child(3)`).isVisible()).toBe(true)
-    expect(wrapper.find(`[data-test="tab-content"]:nth-child(2)`).isVisible()).toBe(false)
+    expect(wrapper.findAll(`[data-test="tab-content"]`)[2].isVisible()).toBe(true)
+    expect(wrapper.findAll(`[data-test="tab-content"]`)[1].isVisible()).toBe(false)
   })
 })
