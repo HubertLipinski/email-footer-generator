@@ -7,10 +7,11 @@ const { socialOptions, social, config } = storeToRefs(store)
 </script>
 
 <template>
-  <div>
+  <div class="pt-4">
     <label class="fieldset-label max-w-64">
       <input
         type="checkbox"
+        name="socialEnabled"
         :true-value="true"
         :false-value="false"
         class="toggle toggle-sm"
@@ -40,6 +41,7 @@ const { socialOptions, social, config } = storeToRefs(store)
           <component :is="socialOptions[option].component" />
           <input
             type="url"
+            :id="`social-${option}`"
             required
             pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
             title="Must be valid URL"

@@ -8,7 +8,9 @@ const title = ref(import.meta.env.VITE_APP_TITLE ?? 'Footer Generator')
 
 <template>
   <div class="flex justify-between items-center px-2 md:px-0">
-    <h1 class="text-xl md:text-2xl font-bold w-full py-4 rounded-box">{{ title }}</h1>
+    <h1 class="text-base sm:text-xl md:text-2xl font-bold w-full py-4 rounded-box mr-2">
+      <span class="hidden sm:inline" :title="title">✉️</span> {{ title }}
+    </h1>
     <div class="inline-flex gap-x-4">
       <LanguageController class="w-20" />
       <ThemeController />

@@ -27,7 +27,7 @@ const { styles } = storeToRefs(store)
 <template>
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Font Family</legend>
-    <select class="select" v-model="styles.fontFamily">
+    <select class="select" v-model="styles.fontFamily" name="fontFamily">
       <option v-for="font in fontOptions" :key="font">{{ font }}</option>
     </select>
   </fieldset>
@@ -41,9 +41,9 @@ const { styles } = storeToRefs(store)
         class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
         v-model="styles.backgroundColor"
       />
-      <label for="backgroundColor" class="label text-base-content text-base hover:cursor-text">{{
-        styles.backgroundColor
-      }}</label>
+      <label for="backgroundColor" class="label text-base-content text-base hover:cursor-text">
+        {{ styles.backgroundColor }}
+      </label>
     </div>
   </fieldset>
 
@@ -56,14 +56,24 @@ const { styles } = storeToRefs(store)
         class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
         v-model="styles.textColor"
       />
-      <label for="textColor" class="label text-base-content text-base hover:cursor-text">{{ styles.textColor }}</label>
+      <label for="textColor" class="label text-base-content text-base hover:cursor-text">
+        {{ styles.textColor }}
+      </label>
     </div>
   </fieldset>
 
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Font Size: {{ styles.fontSize }} px</legend>
     <div class="w-full max-w-xs py-1">
-      <input type="range" min="10" max="20" class="range range-xs range-primary" step="1" v-model="styles.fontSize" />
+      <input
+        type="range"
+        name="fontSize"
+        min="10"
+        max="20"
+        class="range range-xs range-primary"
+        step="1"
+        v-model="styles.fontSize"
+      />
       <div class="flex justify-between px-2.5 mt-3 text-xs">
         <span v-for="number in 11" :key="number">{{ 9 + number }}</span>
       </div>

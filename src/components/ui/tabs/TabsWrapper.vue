@@ -33,22 +33,25 @@ export const injectionKey = Symbol('TheTabs') as InjectionKey<{
 </script>
 
 <template>
-  <div class="h-full tabs tabs-border tabs-lg gap-3">
+  <div class="h-full tabs tabs-border tabs-lg gap-3" role="tablist">
     <a
       role="tab"
-      class="btn btn-soft btn-primary w-[100px]"
       v-for="tab in tabs"
-      :class="{ 'btn-active': activeTab === tab }"
-      @click="activateTab(tab)"
       :key="tab"
+      :class="{ 'btn-active': activeTab === tab }"
+      class="btn btn-soft btn-primary w-[100px]"
+      @click="activateTab(tab)"
+      @keydown.enter.space="activateTab(tab)"
+      :aria-selected="activeTab === tab"
+      :aria-controls="`tabPanel-${tab}`"
+      :id="`tab-${tab}`"
       data-test="tab-title"
+      tabindex="0"
     >
       {{ tab }}
     </a>
 
-    <div class="tab-content pt-4">
-      <slot></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>
 

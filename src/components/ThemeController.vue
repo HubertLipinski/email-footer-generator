@@ -8,11 +8,13 @@ const theme = useTheme()
   <label class="swap swap-rotate scale-80">
     <input
       type="checkbox"
+      name="theme"
       class="theme-controller"
       :value="theme"
       v-model="theme"
       true-value="dark"
       false-value="light"
+      aria-label="Theme"
     />
 
     <!-- sun icon -->

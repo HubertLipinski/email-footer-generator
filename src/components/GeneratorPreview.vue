@@ -17,9 +17,7 @@ const template = useTemplateRef('footerPreview')
 const renderHash = crypto.randomUUID()
 
 const { htmlString, humanReadable, iframeSrcDoc, iframeHeight } = useHtmlPreview(template)
-
 const { codeCopied, copy } = useClipboard()
-
 const { isDownloading, downloadFile } = useDownloadFile()
 
 function downloadHtml() {
@@ -33,23 +31,28 @@ function downloadHtml() {
       <div class="align-middle" v-show="false">
         <div ref="footerPreview">
           <!--          TODO: Toggle between templates -->
-          <!--                    <DefaultTemplate :key="renderHash" />-->
           <MinimalTemplate :key="renderHash" />
         </div>
       </div>
-      <div class="w-full pb-6">
-        <iframe :key="renderHash" :srcdoc="iframeSrcDoc" class="w-full" :style="{ height: iframeHeight }" />
+      <div class="w-full pb-6" tabindex="-1">
+        <iframe
+          :key="renderHash"
+          :srcdoc="iframeSrcDoc"
+          class="w-full"
+          :style="{ height: iframeHeight }"
+          tabindex="-1"
+        />
         <span class="text-xs p-0 m-0" v-if="isDevMode">Height: {{ iframeHeight }}</span>
       </div>
-      <div class="flex justify-between pb-4">
+      <div class="flex justify-between pb-4" tabindex="0">
         <h3>HTML Code</h3>
         <span class="tooltip" data-tip="Minified version">
           <span class="text-secondary px-1">{{ htmlString.length }} characters</span>
         </span>
       </div>
-      <div class="w-full bg-neutral text-sm rounded-lg text-white focus:outline-none">
-        <pre class="focus:outline-none max-h-[120px] sm:max-h-[300px]"><code
-          class="block min-w-full language-html">{{ humanReadable }}</code></pre>
+      <div class="w-full bg-neutral text-sm rounded-lg text-white focus:outline-none overflow-x-hidden" v-show="true">
+        <pre class="focus:outline-none max-h-[350px]"><code
+          class="block w-3.5 language-html">{{ humanReadable }}</code></pre>
       </div>
     </div>
     <div class="mt-6 flex justify-end gap-x-4">
@@ -70,5 +73,10 @@ function downloadHtml() {
 <style scoped lang="css">
 pre {
   background: inherit;
+  margin: 0;
+}
+
+iframe {
+  pointer-events: none;
 }
 </style>

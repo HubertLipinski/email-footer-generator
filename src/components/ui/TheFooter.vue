@@ -6,17 +6,21 @@ const personalUrl = ref(import.meta.env.VITE_PERSONAL_URL)
 </script>
 
 <template>
-  <div class="w-full bg-base p-4 rounded-box text-center text-gray-500 grow-1 place-content-end">
-    &copy; {{ new Date().getFullYear() }} by
-    <a :href="personalUrl" target="_blank" class="link link-hover hover:text-primary">Hubert Lipiński</a>
-    <a
-      href="https://github.com/HubertLipinski"
-      target="_blank"
-      class="link link-hover flex items-center justify-center p-2 hover:text-primary"
-    >
-      <IconGithub class="mr-1" />
-      GitHub
-    </a>
+  <div class="w-full bg-base p-4 rounded-box text-center text-white-300 grow-1 place-content-end">
+    <div class="flex items-center justify-center flex-wrap gap-2 mb-4">
+      <p class="basis-full">
+        &copy; {{ new Date().getFullYear() }} by
+        <a :href="personalUrl" target="_blank" class="link link-hover hover:text-primary">Hubert Lipiński</a>
+      </p>
+      <a
+        href="https://github.com/HubertLipinski"
+        target="_blank"
+        class="link link-hover flex items-center justify-center hover:text-primary"
+      >
+        <IconGithub class="mr-1" />
+        Source Code
+      </a>
+    </div>
   </div>
 </template>
 

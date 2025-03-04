@@ -32,7 +32,14 @@ const isActive = computed(() => tabsProvider.activeTab.value === props.title)
 </script>
 
 <template>
-  <div class="tab-content" v-show="isActive" data-test="tab-content">
+  <div
+    class="tab-content"
+    v-show="isActive"
+    data-test="tab-content"
+    role="tabpanel"
+    :id="`tabPanel-${props.title}`"
+    :aria-labelledby="`tab-${props.title}`"
+  >
     <slot></slot>
   </div>
 </template>
