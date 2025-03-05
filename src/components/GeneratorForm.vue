@@ -5,25 +5,28 @@ import PersonalConfig from '@/components/configuration/PersonalConfig.vue'
 import SocialConfig from '@/components/configuration/SocialConfig.vue'
 import StyleConfig from '@/components/configuration/StyleConfig.vue'
 import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
+import { useTranslation } from '@/composables/useTranslation.ts'
+
+const { t } = useTranslation()
 </script>
 
 <template>
   <div class="flex flex-col h-full">
     <div class="flex justify-between mb-4 items-center">
-      <h2 class="text-xl font-semibold">Configure your email footer</h2>
+      <h2 class="text-xl font-semibold">{{ t('editor.configureYourEmailFooter') }}</h2>
     </div>
 
     <TabsWrapper>
-      <TabContent title="Personal">
+      <TabContent title="editor.personal">
         <PersonalConfig />
       </TabContent>
-      <TabContent title="Social">
+      <TabContent title="editor.social">
         <SocialConfig />
       </TabContent>
-      <TabContent title="Styles">
+      <TabContent title="editor.styles">
         <StyleConfig />
       </TabContent>
-      <TabContent title="Disclaimer">
+      <TabContent title="editor.disclaimer">
         <DisclaimerConfig />
       </TabContent>
     </TabsWrapper>

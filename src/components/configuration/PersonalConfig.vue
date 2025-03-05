@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { useTranslation } from '@/composables/useTranslation.ts'
 
 const store = useConfiguratorStore()
 const { personal } = storeToRefs(store)
+
+const { t } = useTranslation()
 </script>
 
 <template>
   <div class="flex flex-col tab-content">
     <div class="join gap-4">
       <fieldset class="fieldset join-item flex-grow">
-        <legend class="fieldset-legend">Name</legend>
+        <legend class="fieldset-legend">{{ t('editor.form.name') }}</legend>
         <input
           type="text"
           name="name"
@@ -22,7 +25,7 @@ const { personal } = storeToRefs(store)
         />
       </fieldset>
       <fieldset class="fieldset join-item flex-grow">
-        <legend class="fieldset-legend">Position</legend>
+        <legend class="fieldset-legend">{{ t('editor.form.position') }}</legend>
         <input
           type="text"
           name="position"
@@ -34,7 +37,7 @@ const { personal } = storeToRefs(store)
     </div>
 
     <fieldset class="fieldset">
-      <legend class="fieldset-legend">Email</legend>
+      <legend class="fieldset-legend">{{ t('editor.form.email') }}</legend>
       <input
         type="email"
         name="email"
@@ -46,7 +49,7 @@ const { personal } = storeToRefs(store)
     </fieldset>
 
     <fieldset class="fieldset">
-      <legend class="fieldset-legend">Company</legend>
+      <legend class="fieldset-legend">{{ t('editor.form.company') }}</legend>
       <input
         type="text"
         name="work"
@@ -58,7 +61,7 @@ const { personal } = storeToRefs(store)
     </fieldset>
 
     <fieldset class="fieldset">
-      <legend class="fieldset-legend">Website</legend>
+      <legend class="fieldset-legend">{{ t('editor.form.website') }}</legend>
       <input
         type="url"
         name="website"

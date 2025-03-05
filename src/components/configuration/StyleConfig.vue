@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { useTranslation } from '@/composables/useTranslation.ts'
 
 const fontOptions = ref([
   'Arial',
@@ -22,18 +23,20 @@ const alignOptions = ref(['left', 'center', 'right'])
 
 const store = useConfiguratorStore()
 const { styles } = storeToRefs(store)
+
+const { t } = useTranslation()
 </script>
 
 <template>
   <fieldset class="fieldset">
-    <legend class="fieldset-legend">Font Family</legend>
+    <legend class="fieldset-legend">{{ t('editor.form.fontFamily') }}</legend>
     <select class="select" v-model="styles.fontFamily" name="fontFamily">
       <option v-for="font in fontOptions" :key="font">{{ font }}</option>
     </select>
   </fieldset>
 
   <fieldset class="fieldset">
-    <legend class="fieldset-legend">Background Color</legend>
+    <legend class="fieldset-legend">{{ t('editor.form.backgroundColor') }}</legend>
     <div class="inline-flex gap-2">
       <input
         type="color"
@@ -48,7 +51,7 @@ const { styles } = storeToRefs(store)
   </fieldset>
 
   <fieldset class="fieldset">
-    <legend class="fieldset-legend">Text Color</legend>
+    <legend class="fieldset-legend">{{ t('editor.form.textColor') }}</legend>
     <div class="inline-flex gap-2">
       <input
         type="color"
@@ -63,7 +66,7 @@ const { styles } = storeToRefs(store)
   </fieldset>
 
   <fieldset class="fieldset">
-    <legend class="fieldset-legend">Font Size: {{ styles.fontSize }} px</legend>
+    <legend class="fieldset-legend">{{ t('editor.form.fontSize', { value: `${styles.fontSize} px` }) }}</legend>
     <div class="w-full max-w-xs py-1">
       <input
         type="range"
@@ -81,7 +84,7 @@ const { styles } = storeToRefs(store)
   </fieldset>
 
   <fieldset class="fieldset">
-    <legend class="fieldset-legend">Text alignment</legend>
+    <legend class="fieldset-legend">{{ t('editor.form.textAlignment') }}</legend>
     <div class="flex items-start gap-2">
       <div v-for="alignment in alignOptions" :key="`input-${alignment}`">
         <label
@@ -89,7 +92,7 @@ const { styles } = storeToRefs(store)
           :for="`alignment-${alignment}`"
           :class="{ 'btn-active': styles.alignment === alignment }"
         >
-          <span class="whitespace-nowrap capitalize">{{ alignment }}</span>
+          <span class="whitespace-nowrap capitalize">{{ t(`editor.form.${alignment}`) }}</span>
         </label>
         <input
           type="radio"

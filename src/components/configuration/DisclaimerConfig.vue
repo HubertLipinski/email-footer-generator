@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { useTranslation } from '@/composables/useTranslation.ts'
 
 const store = useConfiguratorStore()
 const { additional } = storeToRefs(store)
+
+const { t } = useTranslation()
 </script>
 
 <template>
@@ -17,12 +20,12 @@ const { additional } = storeToRefs(store)
         class="toggle toggle-sm"
         v-model="additional.disclaimer.enabled"
       />
-      <span class="pl-2 d-block text-base-content">Show disclaimer</span>
+      <span class="pl-2 d-block text-base-content">{{ t('editor.form.disclaimerToggle') }}</span>
     </label>
 
     <div v-if="additional.disclaimer.enabled">
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Disclaimer</legend>
+        <legend class="fieldset-legend">{{ t('editor.form.disclaimer') }}</legend>
         <textarea
           name="disclaimer"
           class="textarea h-24 w-full max-h-[150px]"
@@ -31,7 +34,7 @@ const { additional } = storeToRefs(store)
       </fieldset>
 
       <fieldset class="fieldset">
-        <legend class="fieldset-legend">Text Color</legend>
+        <legend class="fieldset-legend">{{ t('editor.form.textColor') }}</legend>
         <div class="inline-flex gap-2">
           <input
             type="color"

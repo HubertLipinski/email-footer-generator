@@ -1,0 +1,41 @@
+{
+  "home": {
+    "editor": "Editor",
+    "preview": "Vorschau",
+    "sourceCode": "GitHub"
+  },
+  "editor": {
+    "configureYourEmailFooter": "Konfigurieren Sie Ihre E-Mail-Signatur",
+    "personal": "Persönlich",
+    "social": "Sozial",
+    "styles": "Stile",
+    "disclaimer": "Haftungsausschluss",
+    "form": {
+      "name": "Vollständiger Name",
+      "position": "Position",
+      "email": "E-Mail",
+      "company": "Firma",
+      "website": "Webseite",
+      "socialToggle": "Symbole anzeigen",
+      "selectIcons": "Symbole auswählen",
+      "disclaimerToggle": "Haftungsausschluss anzeigen",
+      "fontFamily": "Schriftfamilie",
+      "backgroundColor": "Hintergrundfarbe",
+      "textColor": "Textfarbe",
+      "fontSize": "Schriftgröße: {value}",
+      "textAlignment": "Textausrichtung",
+      "left": "Links",
+      "center": "Zentriert",
+      "right": "Rechts",
+      "disclaimer": "Haftungsausschluss"
+    }
+  },
+  "preview": {
+    "htmlCode": "HTML Code",
+    "characters": "{value} Zeichen",
+    "download": "Herunterladen",
+    "copy": "Kopieren",
+    "wait": "Warten...",
+    "done": "Fertig!"
+  }
+}

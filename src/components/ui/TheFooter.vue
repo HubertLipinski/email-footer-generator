@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import IconGithub from '~icons/mdi/github'
 import { ref } from 'vue'
+import { useTranslation } from '@/composables/useTranslation.ts'
 
 const personalUrl = ref(import.meta.env.VITE_PERSONAL_URL)
+
+const { t } = useTranslation()
 </script>
 
 <template>
@@ -18,7 +21,7 @@ const personalUrl = ref(import.meta.env.VITE_PERSONAL_URL)
         class="link link-hover flex items-center justify-center hover:text-primary"
       >
         <IconGithub class="mr-1" />
-        Source Code
+        {{ t('home.sourceCode') }}
       </a>
     </div>
   </div>

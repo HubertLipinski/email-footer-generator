@@ -1,0 +1,41 @@
+{
+  "home": {
+    "editor": "Editor",
+    "preview": "Vista previa",
+    "sourceCode": "GitHub"
+  },
+  "editor": {
+    "configureYourEmailFooter": "Configura tu pie de correo electrónico",
+    "personal": "Personal",
+    "social": "Social",
+    "styles": "Estilos",
+    "disclaimer": "Aviso legal",
+    "form": {
+      "name": "Nombre completo",
+      "position": "Puesto",
+      "email": "Correo electrónico",
+      "company": "Empresa",
+      "website": "Sitio web",
+      "socialToggle": "Mostrar iconos",
+      "selectIcons": "Seleccionar iconos",
+      "disclaimerToggle": "Mostrar aviso legal",
+      "fontFamily": "Familia tipográfica",
+      "backgroundColor": "Color de fondo",
+      "textColor": "Color del texto",
+      "fontSize": "Tamaño de fuente: {value}",
+      "textAlignment": "Alineación del texto",
+      "left": "Izquierda",
+      "center": "Centro",
+      "right": "Derecha",
+      "disclaimer": "Aviso legal"
+    }
+  },
+  "preview": {
+    "htmlCode": "Código HTML",
+    "characters": "{value} caracteres",
+    "download": "Descargar",
+    "copy": "Copiar",
+    "wait": "Espera...",
+    "done": "¡Listo!"
+  }
+}

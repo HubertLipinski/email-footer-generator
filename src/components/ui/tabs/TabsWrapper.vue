@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { provide, readonly, ref } from 'vue'
+import { useTranslation } from '@/composables/useTranslation.ts'
+
+const { t } = useTranslation()
 
 const tabs = ref<string[]>([])
 const activeTab = ref<string>()
@@ -39,7 +42,7 @@ export const injectionKey = Symbol('TheTabs') as InjectionKey<{
       v-for="tab in tabs"
       :key="tab"
       :class="{ 'btn-active': activeTab === tab }"
-      class="btn btn-soft btn-primary w-[100px]"
+      class="btn btn-soft btn-primary min-w-[100px]"
       @click="activateTab(tab)"
       @keydown.enter.space="activateTab(tab)"
       :aria-selected="activeTab === tab"
@@ -48,7 +51,7 @@ export const injectionKey = Symbol('TheTabs') as InjectionKey<{
       data-test="tab-title"
       tabindex="0"
     >
-      {{ tab }}
+      {{ t(tab) }}
     </a>
 
     <slot></slot>
