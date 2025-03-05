@@ -11,7 +11,7 @@ export interface LocaleOption {
 export function useTranslation() {
   const { t, locale } = useI18n()
 
-  const selected = ref(locale)
+  const selected = ref(locale ?? 'en')
   const availableLocales = ref<LocaleOption[]>([
     { label: 'PL', value: 'pl' },
     { label: 'EN', value: 'en' },
@@ -21,7 +21,9 @@ export function useTranslation() {
   ])
 
   watch(selected, (newValue) => {
-    localStorage.setItem(LOCAL_STORAGE_LANGUAGE, newValue)
+    if (newValue) {
+      localStorage.setItem(LOCAL_STORAGE_LANGUAGE, newValue)
+    }
   })
 
   onMounted(() => {
