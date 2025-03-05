@@ -1,0 +1,41 @@
+{
+  "home": {
+    "editor": "Редактор",
+    "preview": "Перегляд",
+    "sourceCode": "GitHub"
+  },
+  "editor": {
+    "configureYourEmailFooter": "Налаштуйте підпис електронної пошти",
+    "personal": "Особисте",
+    "social": "Соціальне",
+    "styles": "Стилі",
+    "disclaimer": "Застереження",
+    "form": {
+      "name": "Повне ім'я",
+      "position": "Посада",
+      "email": "Електронна пошта",
+      "company": "Компанія",
+      "website": "Вебсайт",
+      "socialToggle": "Показати іконки",
+      "selectIcons": "Вибрати іконки",
+      "disclaimerToggle": "Показати Застереження",
+      "fontFamily": "Сімейство шрифтів",
+      "backgroundColor": "Колір фону",
+      "textColor": "Колір тексту",
+      "fontSize": "Розмір шрифта: {value}",
+      "textAlignment": "Вирівнювання тексту",
+      "left": "Зліва",
+      "center": "По центру",
+      "right": "Справа",
+      "disclaimer": "Застереження"
+    }
+  },
+  "preview": {
+    "htmlCode": "HTML код",
+    "characters": "{value} символів",
+    "download": "Завантажити",
+    "copy": "Копіювати",
+    "wait": "Зачекайте...",
+    "done": "Готово!"
+  }
+}

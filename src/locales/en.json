@@ -1,0 +1,41 @@
+{
+  "home": {
+    "editor": "Editor",
+    "preview": "Preview",
+    "sourceCode": "GitHub"
+  },
+  "editor": {
+    "configureYourEmailFooter": "Configure your email footer",
+    "personal": "Personal",
+    "social": "Social",
+    "styles": "Styles",
+    "disclaimer": "Disclaimer",
+    "form": {
+      "name": "Full Name",
+      "position": "Position",
+      "email": "Email",
+      "company": "Company",
+      "website": "Website",
+      "socialToggle": "Display Icons",
+      "selectIcons": "Select Icons",
+      "disclaimerToggle": "Show disclaimer",
+      "fontFamily": "Font Family",
+      "backgroundColor": "Background Color",
+      "textColor": "Text Color",
+      "fontSize": "Font Size: {value}",
+      "textAlignment": "Text alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "preview": {
+    "htmlCode": "HTML Code",
+    "characters": "{value} characters",
+    "download": "Download",
+    "copy": "Copy",
+    "wait": "Wait...",
+    "done": "Done!"
+  }
+}

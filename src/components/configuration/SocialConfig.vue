@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
+import { useTranslation } from '@/composables/useTranslation.ts'
 
 const store = useConfiguratorStore()
 const { socialOptions, social, config } = storeToRefs(store)
+
+const { t } = useTranslation()
 </script>
 
 <template>
@@ -17,12 +20,12 @@ const { socialOptions, social, config } = storeToRefs(store)
         class="toggle toggle-sm"
         v-model="config.socialMediaIcons"
       />
-      <span class="pl-2 d-block text-base-content">Display Icons</span>
+      <span class="pl-2 d-block text-base-content">{{ t('editor.form.socialToggle') }}</span>
     </label>
 
     <div v-show="config.socialMediaIcons" class="pt-2 pb-4">
       <fieldset class="fieldset flex pb-2 flex-wrap gap-2">
-        <legend class="fieldset-legend">Select Icons</legend>
+        <legend class="fieldset-legend">{{ t('editor.form.selectIcons') }}</legend>
         <div v-for="(option, key) in socialOptions" :key="key">
           <label
             class="btn btn-soft btn-primary"

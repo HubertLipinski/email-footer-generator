@@ -1,0 +1,41 @@
+{
+  "home": {
+    "editor": "Edytor",
+    "preview": "Podgląd",
+    "sourceCode": "GitHub"
+  },
+  "editor": {
+    "configureYourEmailFooter": "Skonfiguruj swoją stopkę email",
+    "personal": "Dane",
+    "social": "Linki",
+    "styles": "Style",
+    "disclaimer": "Klauzula",
+    "form": {
+      "name": "Imię i Nazwisko",
+      "position": "Stanowisko",
+      "email": "Email",
+      "company": "Firma",
+      "website": "Strona internetowa",
+      "socialToggle": "Pokaż Ikony",
+      "selectIcons": "Wybierz Ikony",
+      "disclaimerToggle": "Dołącz klauzulę",
+      "fontFamily": "Czcionka",
+      "backgroundColor": "Kolor tła",
+      "textColor": "Kolor tekstu",
+      "fontSize": "Rozmiar czcionki: {value}",
+      "textAlignment": "Wyrównanie tekstu do",
+      "left": "Lewej",
+      "center": "Środka",
+      "right": "Prawej",
+      "disclaimer": "Klauzula"
+    }
+  },
+  "preview": {
+    "htmlCode": "Kod HTML",
+    "characters": "{value} znaków",
+    "download": "Pobierz",
+    "copy": "Kopiuj",
+    "wait": "Czekaj...",
+    "done": "Gotowe!"
+  }
+}
