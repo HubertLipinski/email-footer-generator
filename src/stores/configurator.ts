@@ -16,6 +16,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     website: '',
   })
 
+  // TODO: refactor
   const social = ref<Record<string, string | string[]>>({
     selected: ['facebook', 'twitter'],
     facebook: 'https://facebook.com/',
@@ -24,11 +25,18 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     instagram: '',
   })
 
+  // const socialOption = ref({
+  //   name: 'facebook',
+  //   value: 'https://facebook.com/',
+  //   color: '#123456'
+  // })
+
   const socialOptions = ref<SocialOptions>({
     facebook: {
       label: 'Facebook',
       placeholder: 'https://facebook.com/your-profile',
       component: IconFacebook,
+      defaultColor: '#1877F2' // TODO: default color of the icon
     },
     twitter: {
       label: 'X (Twitter)',

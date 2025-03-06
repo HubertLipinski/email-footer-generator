@@ -10,6 +10,7 @@ export type SocialOption = {
   label: unknown
   placeholder: string
   component: unknown
+  defaultColor?: string
 }
 
 export interface SocialOptions {
