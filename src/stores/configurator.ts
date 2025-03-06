@@ -62,7 +62,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
   const additional = ref({
     disclaimer: {
       enabled: true,
-      color: '#a0a0a0',
+      color: '#787878',
       content:
         'This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed.',
     },

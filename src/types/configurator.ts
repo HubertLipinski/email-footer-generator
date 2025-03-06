@@ -15,3 +15,9 @@ export type SocialOption = {
 export interface SocialOptions {
   [k: string]: SocialOption
 }
+
+export enum TextAlignment {
+  LEFT = 'left',
+  CENTER = 'center',
+  RIGHT = 'right',
+}
