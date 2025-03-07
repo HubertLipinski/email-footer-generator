@@ -36,7 +36,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     return output
   }
 
-  const iframeHeight = ref('100px')
+  const iframeHeight = ref('170px')
   const iframeSrcDoc = computed((): string => {
     return `<html><head><script>
                   function sendHeight() {

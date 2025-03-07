@@ -39,22 +39,34 @@ const { t } = useTranslation()
         </div>
       </fieldset>
 
-      <div v-for="option in social.selected" :key="option" class="pt-3">
-        <label class="input">
-          <component :is="socialOptions[option].component" />
-          <input
-            type="url"
-            :id="`social-${option}`"
-            required
-            pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
-            title="Must be valid URL"
-            :placeholder="socialOptions[option].placeholder"
-            v-model.trim="social[option]"
-          />
-        </label>
-      </div>
+      <TransitionGroup name="list">
+        <div v-for="option in social.selected" :key="option" class="pt-3">
+          <label class="input">
+            <component :is="socialOptions[option].component" />
+            <input
+              type="url"
+              :id="`social-${option}`"
+              required
+              pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
+              title="Must be valid URL"
+              :placeholder="socialOptions[option].placeholder"
+              v-model.trim="social[option]"
+            />
+          </label>
+        </div>
+      </TransitionGroup>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.2s ease-in-out;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+</style>
