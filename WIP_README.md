@@ -3,7 +3,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
@@ -35,6 +34,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -50,6 +50,19 @@
 
 ## About The Project
 
+<p>
+Email Footer Generator is an online tool that allows users to quickly and easily create email footers. With this tool, you can personalize your email communications by adding contact information, social media links, and other pertinent details.
+</p>
+
+### Features
+
+- User-Friendly Interface: An intuitive interface enables users to create email footers without technical expertise.
+- Customization: Add your name, position, company, contact details, and links to social media profiles.
+- Responsive Design: Email footers are optimized for display on various devices, including desktops and mobile devices.
+- Compatibility: Generated footers are compatible with popular email clients such as Gmail, Outlook, Apple Mail, and others.
+
+<br/>
+
 [![Generated Footer Preview][product-screenshot]](https://email-footer-generator.vercel.app/)
 
 
@@ -58,7 +71,6 @@
 - [![Vue][Vue.js]][Vue-url]
 - [![Typescript][TS-logo]][TS-url]
 - [![TailwindCSS][TW-logo]][TW-url]
-
 
 
 ## Getting Started
