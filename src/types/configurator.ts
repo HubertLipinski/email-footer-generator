@@ -7,13 +7,10 @@ export type PersonalConfig = {
 }
 
 export type SocialOption = {
-  label: unknown
-  placeholder: string
-  component: unknown
-}
-
-export interface SocialOptions {
-  [k: string]: SocialOption
+  label: string
+  value: string
+  icon: string
+  color: string
 }
 
 export enum TextAlignment {
@@ -21,3 +18,20 @@ export enum TextAlignment {
   CENTER = 'center',
   RIGHT = 'right',
 }
+export type TextAlignmentValue = `${TextAlignment}`
+
+export const FONT_OPTIONS = [
+  'Arial',
+  'Helvetica',
+  'Tahoma',
+  'Verdana',
+  'Trebuchet MS',
+  'Geneva',
+  'Times New Roman',
+  'Georgia',
+  'Garamond',
+  'Courier New',
+  'Lucida Console',
+  'Monaco',
+] as const
+export type FontOption = (typeof FONT_OPTIONS)[number]

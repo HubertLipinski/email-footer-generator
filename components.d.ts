@@ -11,6 +11,7 @@ declare module 'vue' {
     DisclaimerConfig: typeof import('./src/components/configuration/DisclaimerConfig.vue')['default']
     GeneratorForm: typeof import('./src/components/GeneratorForm.vue')['default']
     GeneratorPreview: typeof import('./src/components/GeneratorPreview.vue')['default']
+    ISystemUiconsDragVertical: typeof import('~icons/system-uicons/drag-vertical')['default']
     LanguageController: typeof import('./src/components/LanguageController.vue')['default']
     MinimalTemplate: typeof import('./src/components/templates/MinimalTemplate.vue')['default']
     PersonalConfig: typeof import('./src/components/configuration/PersonalConfig.vue')['default']

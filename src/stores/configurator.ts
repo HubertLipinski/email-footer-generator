@@ -1,11 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { PersonalConfig, SocialOptions } from '@/types/configurator.ts'
-
-import IconFacebook from '~icons/mdi/facebook-box'
-import IconX from '~icons/ri/twitter-x-fill'
-import IconLinkedIn from '~icons/mdi/linkedin'
-import IconInstagram from '~icons/mdi/instagram'
+import { type PersonalConfig, type SocialOption, TextAlignment } from '@/types/configurator.ts'
 
 export const useConfiguratorStore = defineStore('configurator', () => {
   const personal = ref<PersonalConfig>({
@@ -16,35 +11,9 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     website: '',
   })
 
-  const social = ref<Record<string, string | string[]>>({
-    selected: ['facebook', 'twitter'],
-    facebook: 'https://facebook.com/',
-    twitter: 'https://x.com/',
-    linkedin: '',
-    instagram: '',
-  })
-
-  const socialOptions = ref<SocialOptions>({
-    facebook: {
-      label: 'Facebook',
-      placeholder: 'https://facebook.com/your-profile',
-      component: IconFacebook,
-    },
-    twitter: {
-      label: 'X (Twitter)',
-      placeholder: 'https://x.com/your-profile',
-      component: IconX,
-    },
-    linkedin: {
-      label: 'LinkedIn',
-      placeholder: 'https://linkedin.com/in/your-profile',
-      component: IconLinkedIn,
-    },
-    instagram: {
-      label: 'Instagram',
-      placeholder: 'https://instagram.com/your-profile',
-      component: IconInstagram,
-    },
+  const social = ref<{ enabled: boolean; selected: SocialOption[] }>({
+    enabled: true,
+    selected: [],
   })
 
   const styles = ref({
@@ -52,11 +21,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     backgroundColor: '#ffffff',
     textColor: '#000000',
     fontSize: 14,
-    alignment: 'left',
-  })
-
-  const config = ref({
-    socialMediaIcons: true,
+    alignment: TextAlignment.LEFT,
   })
 
   const additional = ref({
@@ -68,5 +33,5 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     },
   })
 
-  return { personal, social, socialOptions, styles, config, additional }
+  return { personal, social, styles, additional }
 })
