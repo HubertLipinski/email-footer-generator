@@ -12,7 +12,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
   })
 
   const social = ref<{ enabled: boolean; selected: SocialOption[] }>({
-    enabled: false,
+    enabled: true,
     selected: [],
   })
 

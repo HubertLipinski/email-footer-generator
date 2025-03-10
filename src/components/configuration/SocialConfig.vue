@@ -2,9 +2,10 @@
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
 import { useTranslation } from '@/composables/useTranslation.ts'
-import type { Component } from 'vue'
+import { type Component, onMounted } from 'vue'
 import { ref } from 'vue'
 import type { SocialOption } from '@/types/configurator.ts'
+import Draggable from 'vuedraggable'
 
 import IconFacebook from '~icons/mdi/facebook-box'
 import IconX from '~icons/ri/twitter-x-fill'
@@ -54,6 +55,13 @@ function getSocialComponent(item: SocialOption): Component | null {
 
 const store = useConfiguratorStore()
 const { social } = storeToRefs(store)
+
+onMounted(() => {
+  if (social.value.selected.length === 0) {
+    social.value.selected.push(socialOptions.value['facebook'])
+    social.value.selected.push(socialOptions.value['twitter'])
+  }
+})
 </script>
 
 <template>
@@ -86,40 +94,32 @@ const { social } = storeToRefs(store)
         </div>
       </fieldset>
 
-      <TransitionGroup name="list">
-        <div v-for="option in social.selected" :key="option.label" class="pt-3 flex w-full">
-          <label class="input grow-1 mr-1">
-            <component :is="getSocialComponent(option)" :style="{ color: option.color }" />
+      <Draggable v-model="social.selected" item-key="label" handle=".drag-handle" tag="div" class="overflow-hidden">
+        <template #item="{ element, index }">
+          <div class="flex w-full items-start gap-2 pt-4">
+            <span class="drag-handle cursor-move text-lg pt-2.25 pr-2">
+              <i-system-uicons-drag-vertical />
+            </span>
+            <label class="input grow-1 mr-1">
+              <component :is="getSocialComponent(element)" :style="{ color: element.color }" />
+              <input
+                type="url"
+                :id="`social-${index}`"
+                required
+                pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
+                title="Must be valid URL"
+                v-model.trim="element.value"
+              />
+            </label>
+
             <input
-              type="url"
-              :id="`social-${option}`"
-              required
-              pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
-              title="Must be valid URL"
-              v-model.trim="option.value"
+              type="color"
+              class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
+              v-model="element.color"
             />
-          </label>
-          <input
-            type="color"
-            id="textColor"
-            class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
-            v-model="option.color"
-          />
-        </div>
-      </TransitionGroup>
+          </div>
+        </template>
+      </Draggable>
     </div>
   </div>
 </template>
-
-<style scoped>
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.2s ease-in-out;
-}
-
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(20px);
-}
-</style>
