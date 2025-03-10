@@ -3,7 +3,6 @@ import 'prismjs/themes/prism-tomorrow.min.css'
 import { useTemplateRef } from 'vue'
 import MinimalTemplate from '@/components/templates/MinimalTemplate.vue'
 import { useHtmlPreview } from '@/composables/useHtmlPreview.ts'
-import { useDevelopmentMode } from '@/composables/useDevelopmentMode.ts'
 import { useClipboard } from '@/composables/useClipboard.ts'
 import { useDownloadFile } from '@/composables/useDownloadFile.ts'
 
@@ -11,8 +10,6 @@ import DownloadIcon from '~icons/material-symbols/download'
 import CopyIcon from '~icons/material-symbols/content-copy-outline'
 import SpinIcon from '~icons/svg-spinners/180-ring-with-bg'
 import { useTranslation } from '@/composables/useTranslation.ts'
-
-const { isDevMode } = useDevelopmentMode()
 
 const template = useTemplateRef('footerPreview')
 const renderHash = crypto.randomUUID()
@@ -47,7 +44,6 @@ const { t } = useTranslation()
             :style="{ height: iframeHeight }"
             tabindex="-1"
           />
-          <span class="text-xs p-0 m-0" v-if="isDevMode">Height: {{ iframeHeight }}</span>
         </div>
         <div class="flex justify-between pb-4" tabindex="0">
           <h3>{{ t('preview.htmlCode') }}</h3>
