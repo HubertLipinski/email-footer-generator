@@ -1,61 +1,139 @@
-# email-footer-generator
+<a id="readme-top"></a>
 
-This template should help get you started developing with Vue 3 in Vite.
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Recommended IDE Setup
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/HubertLipinski/email-footer-generator">
+    <img src="src/assets/logo.svg" alt="Logo" width="80" height="80">
+  </a>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+  <h3 align="center">Email Footer Generator</h3>
 
-## Type Support for `.vue` Imports in TS
+  <p align="center">
+    Email Footer Generator is an online tool that allows users to quickly and easily create email footers.
+    <br />
+    <br />
+    <a href="https://email-footer-generator.vercel.app">View Demo</a>
+    &middot;
+    <a href="https://github.com/HubertLipinski/email-footer-generator/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/HubertLipinski/email-footer-generator/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-## Customize configuration
+<!-- TABLE OF CONTENTS -->
+<details> 
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+         <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## About The Project
 
-```sh
-npm install
-```
+<p>
+Email Footer Generator is an online tool that allows users to quickly and easily create email footers. With this tool, you can personalize your email communications by adding contact information, social media links, and other pertinent details.
+</p>
 
-### Compile and Hot-Reload for Development
+### Features
 
-```sh
-npm run dev
-```
+- User-Friendly Interface: An intuitive interface enables users to create email footers without technical expertise.
+- Customization: Add your name, position, company, contact details, and links to social media profiles.
+- Responsive Design: Email footers are optimized for display on various devices, including desktops and mobile devices.
+- Compatibility: Generated footers are compatible with popular email clients such as Gmail, Outlook, Apple Mail, and others.
 
-### Type-Check, Compile and Minify for Production
+<br/>
 
-```sh
-npm run build
-```
+[![Generated Footer Preview][product-screenshot]](https://email-footer-generator.vercel.app/)
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```sh
-npm run test:unit
-```
+### Built With
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+- [![Vue][Vue.js]][Vue-url]
+- [![Typescript][TS-logo]][TS-url]
+- [![TailwindCSS][TW-logo]][TW-url]
 
-```sh
-npm run test:e2e:dev
-```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Getting Started
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+Visit the live demo at [here](https://email-footer-generator.vercel.app/) or install project locally.
 
-```sh
-npm run build
-npm run test:e2e
-```
+### Installation
 
-### Lint with [ESLint](https://eslint.org/)
+1. Clone the repo
+   ```sh
+   git clone https://github.com/HubertLipinski/email-footer-generator.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm i
+   ```
+3. Copy .env config
+   ```sh
+   cp .env.example .env
+   ```
+4. Start application
+   ```sh
+   npm run dev
+   ```
 
-```sh
-npm run lint
-```
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT license.
+
+
+<!-- CONTACT -->
+## Contact
+
+Hubert Lipiński - [hubertlipinskipl@gmail.com](mailto:hubertlipinskipl@gmail.com)
+
+Project Link: [https://github.com/HubertLipinski/email-footer-generator](https://github.com/HubertLipinski/email-footer-generator)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/HubertLipinski/email-footer-generator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/HubertLipinski/email-footer-generator/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/HubertLipinski/email-footer-generator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/HubertLipinski/email-footer-generator/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/hubert-lipinski/
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/HubertLipinski/email-footer-generator/blob/master/LICENSE.txt
+[product-screenshot]: src/assets/preview.png
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[TS-logo]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[TS-url]: https://www.typescriptlang.org/
+[TW-logo]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TW-url]: https://tailwindcss.com/
