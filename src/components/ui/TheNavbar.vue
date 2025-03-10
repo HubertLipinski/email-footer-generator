@@ -11,8 +11,13 @@ const { t } = useTranslation()
 
 <template>
   <div class="flex justify-between items-center px-2 md:px-0 gap-x-2">
-    <h1 class="text-base sm:text-xl md:text-2xl font-bold w-full py-4 rounded-box mr-2">
-      <span class="hidden sm:inline" :title="title">✉️</span> {{ title }}
+    <h1
+      class="text-base sm:text-xl md:text-2xl font-bold w-full py-4 rounded-box mr-2 inline-flex items-center gap-x-2"
+    >
+      <span class="hidden sm:inline" :title="title">
+        <img src="@/assets/logo.svg" :alt="title" class="h-10 md:h-12 inline-block" />
+      </span>
+      {{ title }}
     </h1>
     <div class="inline-flex gap-x-4">
       <LanguageController class="w-20" />
