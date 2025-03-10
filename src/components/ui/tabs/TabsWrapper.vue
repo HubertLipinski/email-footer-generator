@@ -42,7 +42,7 @@ export const injectionKey = Symbol('TheTabs') as InjectionKey<{
       v-for="tab in tabs"
       :key="tab"
       :class="{ 'btn-active': activeTab === tab }"
-      class="btn btn-soft btn-primary min-w-[100px]"
+      class="btn btn-soft btn-primary min-w-full sm:min-w-[100px]"
       @click="activateTab(tab)"
       @keydown.enter.space="activateTab(tab)"
       :aria-selected="activeTab === tab"

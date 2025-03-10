@@ -11,7 +11,7 @@ const { t } = useTranslation()
 
 <template>
   <div class="flex flex-col tab-content">
-    <div class="join gap-4">
+    <div class="sm:join gap-4">
       <fieldset class="fieldset join-item flex-grow">
         <legend class="fieldset-legend">{{ t('editor.form.name') }}</legend>
         <input

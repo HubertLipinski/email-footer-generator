@@ -39,30 +39,42 @@ const { t } = useTranslation()
         </div>
       </fieldset>
 
-      <div v-for="option in social.selected" :key="option" class="pt-3">
-        <div class="join">
-          <label class="input join-item mr-1">
-            <component :is="socialOptions[option].component" />
-            <input
-              type="url"
-              :id="`social-${option}`"
-              required
-              pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
-              title="Must be valid URL"
-              :placeholder="socialOptions[option].placeholder"
-              v-model.trim="social[option]"
-            />
-          </label>
-          <div class="join-item flex gap-2">
-            <input type="color" id="textColor" class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none" />
-            <button class="btn btn-ghost">
-              <i-material-symbols-disabled-by-default-outline class="text-base-content w-full" />
-            </button>
+      <TransitionGroup name="list">
+        <div v-for="option in social.selected" :key="option" class="pt-3">
+          <div class="join">
+            <label class="input join-item mr-1">
+              <component :is="socialOptions[option].component" />
+              <input
+                type="url"
+                :id="`social-${option}`"
+                required
+                pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
+                title="Must be valid URL"
+                :placeholder="socialOptions[option].placeholder"
+                v-model.trim="social[option]"
+              />
+            </label>
+            <div class="join-item flex gap-2">
+              <input type="color" id="textColor" class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none" />
+              <button class="btn btn-ghost">
+                <i-material-symbols-disabled-by-default-outline class="text-base-content w-full" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </TransitionGroup>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.2s ease-in-out;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+</style>
