@@ -39,7 +39,7 @@ const { t } = useTranslation()
           <input
             type="color"
             id="disclaimerColor"
-            class="input flex-none max-w-18 p-0 m-0 border-0"
+            class="input flex-none max-w-18 p-0 m-0 border-0 color-picker"
             v-model="additional.disclaimer.color"
           />
           <label for="disclaimerColor" class="label text-base-content text-base hover:cursor-text">

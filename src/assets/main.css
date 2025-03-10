@@ -4,3 +4,30 @@
     light --default,
     dark --prefersdark;
 }
+
+.color-picker {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: none;
+  height: 100%;
+}
+
+.color-picker::-moz-color-swatch {
+  border: none;
+  height: 100%;
+}
+
+.color-picker::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}

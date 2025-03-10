@@ -4,22 +4,11 @@ import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
 import { useTranslation } from '@/composables/useTranslation.ts'
 
-const fontOptions = ref([
-  'Arial',
-  'Helvetica',
-  'Tahoma',
-  'Verdana',
-  'Trebuchet MS',
-  'Geneva',
-  'Times New Roman',
-  'Georgia',
-  'Garamond',
-  'Courier New',
-  'Lucida Console',
-  'Monaco',
-])
+import { FONT_OPTIONS, type FontOption, TextAlignment, type TextAlignmentValue } from '@/types/configurator.ts'
 
-const alignOptions = ref(['left', 'center', 'right'])
+const fontOptions = ref<FontOption[]>([...FONT_OPTIONS])
+
+const alignOptions = ref<TextAlignmentValue[]>([TextAlignment.LEFT, TextAlignment.CENTER, TextAlignment.RIGHT])
 
 const store = useConfiguratorStore()
 const { styles } = storeToRefs(store)
@@ -41,7 +30,7 @@ const { t } = useTranslation()
       <input
         type="color"
         id="backgroundColor"
-        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
+        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none color-picker"
         v-model="styles.backgroundColor"
       />
       <label for="backgroundColor" class="label text-base-content text-base hover:cursor-text">
@@ -56,7 +45,7 @@ const { t } = useTranslation()
       <input
         type="color"
         id="textColor"
-        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none"
+        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none color-picker"
         v-model="styles.textColor"
       />
       <label for="textColor" class="label text-base-content text-base hover:cursor-text">

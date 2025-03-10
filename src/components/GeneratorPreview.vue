@@ -83,6 +83,6 @@ pre {
 }
 
 iframe {
-  pointer-events: none;
+  //pointer-events: none;
 }
 </style>
