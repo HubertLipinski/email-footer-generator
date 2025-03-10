@@ -77,7 +77,7 @@ Email Footer Generator is an online tool that allows users to quickly and easily
 
 ## Getting Started
 
-Visit the live demo at [here](https://email-footer-generator.vercel.app/) or install project locally.
+Visit the live demo [here](https://email-footer-generator.vercel.app/) or install project locally.
 
 ### Installation
 
