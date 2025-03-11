@@ -48,8 +48,6 @@ const { t } = useTranslation()
         <div class="flex justify-between pb-4" tabindex="0">
           <h3>{{ t('preview.htmlCode') }}</h3>
 
-          <!-- TODO: translation here -->
-
           <span class="tooltip break-all" :data-tip="t('preview.minified')">
             <span class="text-secondary px-1">{{ t('preview.characters', { value: htmlString.length }) }}</span>
           </span>
