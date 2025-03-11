@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Налаштуйте підпис електронної пошти",
+    "template": "Шаблон",
     "personal": "Особисте",
     "social": "Соціальне",
     "styles": "Стилі",
@@ -27,7 +28,8 @@
       "left": "Зліва",
       "center": "По центру",
       "right": "Справа",
-      "disclaimer": "Застереження"
+      "disclaimer": "Застереження",
+      "selectTemplate": "Виберіть шаблон"
     }
   },
   "preview": {
@@ -38,5 +40,13 @@
     "wait": "Зачекайте...",
     "done": "Готово!",
     "minified": "Скорочена версія"
+  },
+  "template": {
+    "default": "Стандартно",
+    "corporate": "Корпоративний",
+    "creative": "Креативний",
+    "luxury": "Розкіш",
+    "minimalistic": "Мінімалістичний",
+    "modern": "Сучасний"
   }
 }

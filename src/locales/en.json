@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Configure your email footer",
+    "template": "Template",
     "personal": "Personal",
     "social": "Social",
     "styles": "Styles",
@@ -27,7 +28,8 @@
       "left": "Left",
       "center": "Center",
       "right": "Right",
-      "disclaimer": "Disclaimer"
+      "disclaimer": "Disclaimer",
+      "selectTemplate": "Select template"
     }
   },
   "preview": {
@@ -38,5 +40,13 @@
     "wait": "Wait...",
     "done": "Done!",
     "minified": "Minified version"
+  },
+  "template": {
+    "default": "Default",
+    "corporate": "Corporate",
+    "creative": "Creative",
+    "luxury": "Luxury",
+    "minimalistic": "Minimalistic",
+    "modern": "Modern"
   }
 }

@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Konfigurieren Sie Ihre E-Mail-Signatur",
+    "template": "Schablone",
     "personal": "Persönlich",
     "social": "Sozial",
     "styles": "Stile",
@@ -27,7 +28,8 @@
       "left": "Links",
       "center": "Zentriert",
       "right": "Rechts",
-      "disclaimer": "Haftungsausschluss"
+      "disclaimer": "Haftungsausschluss",
+      "selectTemplate": "Schablone auswählen"
     }
   },
   "preview": {
@@ -38,5 +40,13 @@
     "wait": "Warten...",
     "done": "Fertig!",
     "minified": "Verkleinerte version"
+  },
+  "template": {
+    "default": "Standard",
+    "corporate": "Unternehmen",
+    "creative": "Kreative",
+    "luxury": "Luxus",
+    "minimalistic": "Minimalistisch",
+    "modern": "Modern"
   }
 }

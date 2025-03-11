@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Configura tu pie de correo electrónico",
+    "template": "Plantilla",
     "personal": "Personal",
     "social": "Social",
     "styles": "Estilos",
@@ -27,7 +28,8 @@
       "left": "Izquierda",
       "center": "Centro",
       "right": "Derecha",
-      "disclaimer": "Aviso legal"
+      "disclaimer": "Aviso legal",
+      "selectTemplate": "Seleccione plantilla"
     }
   },
   "preview": {
@@ -38,5 +40,13 @@
     "wait": "Espera...",
     "done": "¡Listo!",
     "minified": "Versión reducida"
+  },
+  "template": {
+    "default": "Predeterminado",
+    "corporate": "Corporativo",
+    "creative": "Creativo",
+    "luxury": "Lujo",
+    "minimalistic": "Minimalista",
+    "modern": "Moderno"
   }
 }

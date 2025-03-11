@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import 'prismjs/themes/prism-tomorrow.min.css'
-import { useTemplateRef } from 'vue'
-import MinimalTemplate from '@/components/templates/MinimalTemplate.vue'
+import { nextTick, shallowRef, useTemplateRef, watch } from 'vue'
 import { useHtmlPreview } from '@/composables/useHtmlPreview.ts'
 import { useClipboard } from '@/composables/useClipboard.ts'
 import { useDownloadFile } from '@/composables/useDownloadFile.ts'
@@ -12,9 +11,8 @@ import SpinIcon from '~icons/svg-spinners/180-ring-with-bg'
 import { useTranslation } from '@/composables/useTranslation.ts'
 
 const template = useTemplateRef('footerPreview')
-const renderHash = crypto.randomUUID()
 
-const { htmlString, humanReadable, iframeSrcDoc, iframeHeight } = useHtmlPreview(template)
+const { htmlString, humanReadable, iframeSrcDoc, iframeHeight, renderHash, render } = useHtmlPreview(template)
 const { codeCopied, copy } = useClipboard()
 const { isDownloading, downloadFile } = useDownloadFile()
 
@@ -23,17 +21,39 @@ function downloadHtml() {
 }
 
 const { t } = useTranslation()
+
+// TODO: refactor
+const previewTemplate = shallowRef(TemplateDefault)
+
+import TemplateDefault from '@/components/templates/TemplateDefault.vue' // TODO: update
+import TemplateCreative from '@/components/templates/TemplateCreative.vue'
+import TemplateCorporate from '@/components/templates/TemplateCorporate.vue'
+import TemplateLuxury from '@/components/templates/TemplateLuxury.vue'
+import TemplateMinimalistic from '@/components/templates/TemplateMinimalistic.vue'
+
+watch(previewTemplate, async () => {
+  await nextTick()
+  await render()
+})
+// TODO: refactor
 </script>
 
 <template>
   <div>
+    <select class="select" v-model="previewTemplate">
+      <option :value="TemplateDefault">Default</option>
+      <option :value="TemplateCreative">Creative</option>
+      <option :value="TemplateLuxury">Luxury</option>
+      <option :value="TemplateMinimalistic">Minimalistic</option>
+      <option :value="TemplateCorporate">Corporate</option>
+    </select>
+
     <h2 class="text-xl font-semibold mb-6">{{ t('home.preview') }}</h2>
     <div class="bg-card rounded-lg">
       <div class="border-0 rounded-md">
         <div class="align-middle" v-show="false">
           <div ref="footerPreview">
-            <!--          TODO: Toggle between templates -->
-            <MinimalTemplate :key="renderHash" />
+            <component :is="previewTemplate" :key="renderHash" />
           </div>
         </div>
         <div class="w-full pb-6" tabindex="-1">

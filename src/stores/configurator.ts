@@ -3,6 +3,10 @@ import { defineStore } from 'pinia'
 import { type PersonalConfig, type SocialOption, TextAlignment } from '@/types/configurator.ts'
 
 export const useConfiguratorStore = defineStore('configurator', () => {
+  const template = ref({
+    selected: 'default',
+  })
+
   const personal = ref<PersonalConfig>({
     name: 'John Doe',
     position: 'Software Engineer',
@@ -33,5 +37,5 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     },
   })
 
-  return { personal, social, styles, additional }
+  return { template, personal, social, styles, additional }
 })

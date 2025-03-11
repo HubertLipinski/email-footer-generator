@@ -1,4 +1,4 @@
-import { computed, type MaybeRefOrGetter, nextTick, onMounted, onUnmounted, ref, watchEffect } from 'vue'
+import { computed, type MaybeRefOrGetter, nextTick, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue'
 import { html as beautyHtml } from 'js-beautify'
 import Prism from 'prismjs'
 
@@ -7,9 +7,17 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
   const humanReadable = ref<string>('')
   const renderHash = ref(crypto.randomUUID())
 
+  watch(domElement, (value) => {
+    console.log(value)
+  })
+
   watchEffect(async () => {
     if (!domElement.value) return
 
+    await render()
+  })
+
+  async function render(): Promise<void> {
     const rootElement = domElement.value.getElementsByTagName(root)[0] as HTMLElement
     htmlString.value = stripVueGeneratedTags(rootElement.outerHTML)
 
@@ -24,7 +32,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     Prism.highlightAll()
 
     renderHash.value = crypto.randomUUID()
-  })
+  }
 
   function stripVueGeneratedTags(html: string): string {
     let output = html
@@ -74,5 +82,6 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     iframeSrcDoc,
     iframeHeight,
     renderHash,
+    render,
   }
 }
