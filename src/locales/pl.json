@@ -36,6 +36,7 @@
     "download": "Pobierz",
     "copy": "Kopiuj",
     "wait": "Czekaj...",
-    "done": "Gotowe!"
+    "done": "Gotowe!",
+    "minified": "Wersja zminifikowana"
   }
 }
