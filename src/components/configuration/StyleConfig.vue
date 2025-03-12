@@ -66,7 +66,7 @@ const { t } = useTranslation()
         step="1"
         v-model="styles.fontSize"
       />
-      <div class="flex justify-between px-2.5 mt-3 text-xs">
+      <div class="flex justify-between mt-3 text-xs">
         <span v-for="number in 11" :key="number">{{ 9 + number }}</span>
       </div>
     </div>
