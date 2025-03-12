@@ -1,10 +1,14 @@
-import { ref } from 'vue'
+import { type Component, ref, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 import { type PersonalConfig, type SocialOption, TextAlignment } from '@/types/configurator.ts'
+import TemplateDefault from '@/components/templates/TemplateDefault.vue'
 
 export const useConfiguratorStore = defineStore('configurator', () => {
   const template = ref({
-    selected: 'default',
+    selected: {
+      name: 'default',
+      component: shallowRef<Component>(TemplateDefault),
+    },
   })
 
   const personal = ref<PersonalConfig>({

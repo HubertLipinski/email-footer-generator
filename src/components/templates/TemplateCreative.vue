@@ -1,6 +1,12 @@
 <script setup lang="ts">
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+import { useConfiguratorStore } from '@/stores/configurator.ts'
+import { storeToRefs } from 'pinia'
+
+const store = useConfiguratorStore()
+const { personal, social, styles, additional } = storeToRefs(store)
 </script>
 
 <template>
@@ -13,7 +19,7 @@
       color: #333;
       border-collapse: collapse;
       width: 100%;
-      max-width: 600px;
+      /*max-width: 600px;*/
     "
   >
     <tr>
@@ -23,17 +29,27 @@
             <td style="width: 60%">
               <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
                 <tr>
-                  <td style="font-size: 20px; font-weight: 700; letter-spacing: 1px; color: #ff6b6b">JOHN DOE</td>
+                  <td style="font-size: 20px; font-weight: 700; letter-spacing: 1px; color: #ff6b6b">
+                    {{ personal.name }}
+                  </td>
                 </tr>
-                <tr>
-                  <td style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #777">
-                    Creative Director
+                <tr v-if="personal.position">
+                  <td
+                    style="
+                      font-size: 12px;
+                      text-transform: uppercase;
+                      letter-spacing: 2px;
+                      color: #777;
+                      padding-top: 5px;
+                    "
+                  >
+                    {{ personal.position }}
                   </td>
                 </tr>
               </table>
             </td>
-            <td style="width: 40%; text-align: right">
-              <img src="https://placehold.co/400" alt="Agency Logo" style="max-width: 100px; max-height: 50px" />
+            <td style="width: 40%; text-align: right" v-show="true">
+              <img src="https://placehold.co/400" alt="Logo" style="max-width: 100px; max-height: 50px" />
             </td>
           </tr>
         </table>
@@ -47,26 +63,28 @@
               <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
                 <tr>
                   <td style="font-size: 12px">
-                    <a href="mailto:john.doe@example.com" style="color: #ff6b6b; text-decoration: none"
-                      >john.doe@example.com</a
-                    >
+                    <a :href="`mailto:${personal.email}`" style="color: #ff6b6b; text-decoration: none">
+                      {{ personal.email }}
+                    </a>
                   </td>
                 </tr>
                 <tr>
-                  <td style="font-size: 12px; padding-top: 5px">
-                    <a href="tel:(555)123-4567" style="color: #333; text-decoration: none">(555) 123-4567</a>
+                  <td style="font-size: 12px; padding-top: 10px">
+                    <a href="tel:(555)123-4567" style="color: #333; text-decoration: none">(TODO) 123-4567</a>
                   </td>
                 </tr>
               </table>
             </td>
             <td style="width: 50%; text-align: right">
               <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-                <tr>
-                  <td style="font-size: 12px; text-align: right">Acme Creative Agency</td>
+                <tr v-if="personal.company">
+                  <td style="font-size: 12px; text-align: right">{{ personal.company }}</td>
                 </tr>
-                <tr>
-                  <td style="font-size: 12px; padding-top: 5px; text-align: right">
-                    <a href="https://www.example.com" style="color: #333; text-decoration: none">www.example.com</a>
+                <tr v-if="personal.website">
+                  <td style="font-size: 12px; padding-top: 10px; text-align: right">
+                    <a :href="personal.website" target="_blank" style="color: #333; text-decoration: none">{{
+                      personal.website
+                    }}</a>
                   </td>
                 </tr>
               </table>
@@ -77,21 +95,25 @@
     </tr>
     <tr>
       <td style="padding-top: 15px; text-align: center">
-        <a href="https://linkedin.com/in/johndoe" style="text-decoration: none; margin: 0 8px"
-          ><img src="https://cdn.simpleicons.org/linkedin/ff6b6b" alt="LinkedIn" width="20" height="20"
-        /></a>
-        <a href="https://twitter.com/johndoe" style="text-decoration: none; margin: 0 8px"
-          ><img src="https://cdn.simpleicons.org/twitter/ff6b6b" alt="Twitter" width="20" height="20"
-        /></a>
-        <a href="https://instagram.com/johndoe" style="text-decoration: none; margin: 0 8px"
-          ><img src="https://cdn.simpleicons.org/instagram/ff6b6b" alt="Instagram" width="20" height="20"
-        /></a>
-        <a href="https://behance.net/johndoe" style="text-decoration: none; margin: 0 8px"
-          ><img src="https://cdn.simpleicons.org/behance/ff6b6b" alt="Behance" width="20" height="20"
-        /></a>
-        <a href="https://dribbble.com/johndoe" style="text-decoration: none; margin: 0 8px"
-          ><img src="https://cdn.simpleicons.org/dribbble/ff6b6b" alt="Dribbble" width="20" height="20"
-        /></a>
+        <a
+          v-for="icon in social.selected"
+          :key="icon.label"
+          :href="icon.value"
+          target="_blank"
+          style="text-decoration: none; margin: 0 8px"
+        >
+          <img :src="`${icon.icon}?color=%23ff6b6b`" :alt="icon.label" width="20" height="20" />
+        </a>
+      </td>
+    </tr>
+    <tr v-if="additional.disclaimer.enabled">
+      <td
+        style="padding-top: 15px; font-size: 12px"
+        :style="`color:${additional.disclaimer.color}; text-align: ${styles.alignment}`"
+      >
+        <p>
+          {{ additional.disclaimer.content }}
+        </p>
       </td>
     </tr>
   </table>

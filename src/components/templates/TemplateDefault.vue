@@ -25,7 +25,7 @@ const bodyStyles = reactive({
     cellspacing="0"
     cellpadding="0"
     border="0"
-    style="padding: 20px 10px; border-top: 1px solid #ddd"
+    style="padding: 10px"
     :style="bodyStyles"
   >
     <tr>
@@ -74,7 +74,10 @@ const bodyStyles = reactive({
     </tr>
     <tr v-if="additional.disclaimer.enabled">
       <td style="padding: 0 5px 0 5px">
-        <p style="margin: 10px 0 0; font-size: 0.75em" :style="`color:${additional.disclaimer.color}`">
+        <p
+          style="margin: 10px 0 0; font-size: 0.75em; border-top: 1px solid #e0e0e0; padding-top: 10px"
+          :style="`color:${additional.disclaimer.color}`"
+        >
           {{ additional.disclaimer.content }}
         </p>
       </td>

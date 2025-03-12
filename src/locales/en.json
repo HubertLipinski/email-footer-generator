@@ -39,7 +39,8 @@
     "copy": "Copy",
     "wait": "Wait...",
     "done": "Done!",
-    "minified": "Minified version"
+    "minified": "Minified version",
+    "selectedTemplate": "Selected template"
   },
   "template": {
     "default": "Default",

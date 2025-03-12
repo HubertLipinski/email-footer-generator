@@ -39,7 +39,8 @@
     "copy": "Kopiuj",
     "wait": "Czekaj...",
     "done": "Gotowe!",
-    "minified": "Wersja zminifikowana"
+    "minified": "Wersja zminifikowana",
+    "selectedTemplate": "Wybrany szablon"
   },
   "template": {
     "default": "Domyślny",

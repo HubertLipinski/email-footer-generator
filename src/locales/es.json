@@ -39,7 +39,8 @@
     "copy": "Copiar",
     "wait": "Espera...",
     "done": "¡Listo!",
-    "minified": "Versión reducida"
+    "minified": "Versión reducida",
+    "selectedTemplate": "Plantilla seleccionada"
   },
   "template": {
     "default": "Predeterminado",

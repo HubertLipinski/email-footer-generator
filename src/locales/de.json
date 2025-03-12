@@ -39,7 +39,8 @@
     "copy": "Kopieren",
     "wait": "Warten...",
     "done": "Fertig!",
-    "minified": "Verkleinerte version"
+    "minified": "Verkleinerte version",
+    "selectedTemplate": "Ausgewählte schablone"
   },
   "template": {
     "default": "Standard",
