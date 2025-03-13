@@ -29,7 +29,8 @@
       "center": "По центру",
       "right": "Справа",
       "disclaimer": "Застереження",
-      "selectTemplate": "Виберіть шаблон"
+      "selectTemplate": "Виберіть шаблон",
+      "accentColor": "Колір акценту"
     }
   },
   "preview": {

@@ -29,7 +29,8 @@
       "center": "Środka",
       "right": "Prawej",
       "disclaimer": "Klauzula",
-      "selectTemplate": "Wybierz szablon"
+      "selectTemplate": "Wybierz szablon",
+      "accentColor": "Kolor akcentu"
     }
   },
   "preview": {

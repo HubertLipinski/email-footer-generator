@@ -2,11 +2,12 @@ import { type Component, ref, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 import { type PersonalConfig, type SocialOption, TextAlignment } from '@/types/configurator.ts'
 import TemplateDefault from '@/components/templates/TemplateDefault.vue'
+import { TEMPLATE_TO_STYLES, THEME_OPTIONS, type ThemeOption } from '@/types/themeOptions.ts'
 
 export const useConfiguratorStore = defineStore('configurator', () => {
   const template = ref({
     selected: {
-      name: 'default',
+      name: THEME_OPTIONS.Default,
       component: shallowRef<Component>(TemplateDefault),
     },
   })
@@ -28,6 +29,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     fontFamily: 'Arial',
     backgroundColor: '#ffffff',
     textColor: '#000000',
+    accentColor: '#0047e1',
     fontSize: 14,
     alignment: TextAlignment.LEFT,
   })
@@ -41,5 +43,12 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     },
   })
 
-  return { template, personal, social, styles, additional }
+  function updateTemplateStyles(template: ThemeOption): void {
+    const styleObject = TEMPLATE_TO_STYLES[template]
+
+    Object.assign(styles.value, styleObject.styles)
+    Object.assign(additional.value.disclaimer, styleObject.additional.disclaimer)
+  }
+
+  return { template, personal, social, styles, additional, updateTemplateStyles }
 })

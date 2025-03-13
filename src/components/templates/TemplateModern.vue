@@ -2,9 +2,11 @@
 
 <template>
   <table>
-    <tr>
-      <td>TODO</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>TODO</td>
+      </tr>
+    </tbody>
   </table>
 </template>
 

@@ -29,7 +29,8 @@
       "center": "Zentriert",
       "right": "Rechts",
       "disclaimer": "Haftungsausschluss",
-      "selectTemplate": "Schablone auswählen"
+      "selectTemplate": "Schablone auswählen",
+      "accentColor": "Akzentfarbe"
     }
   },
   "preview": {

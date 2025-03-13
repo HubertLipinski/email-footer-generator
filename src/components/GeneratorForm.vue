@@ -17,7 +17,7 @@ const { t } = useTranslation()
       <h2 class="text-xl font-semibold">{{ t('editor.configureYourEmailFooter') }}</h2>
     </div>
 
-    <TabsWrapper>
+    <TabsWrapper class="mt-4">
       <TransitionGroup name="slide-fade-list" appear>
         <TabContent title="editor.template" key="template">
           <TemplateConfig />

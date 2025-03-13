@@ -29,7 +29,8 @@
       "center": "Centro",
       "right": "Derecha",
       "disclaimer": "Aviso legal",
-      "selectTemplate": "Seleccione plantilla"
+      "selectTemplate": "Seleccione plantilla",
+      "accentColor": "Color de acento"
     }
   },
   "preview": {

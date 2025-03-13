@@ -3,10 +3,10 @@ import { ref } from 'vue'
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
 import { useTranslation } from '@/composables/useTranslation.ts'
+import { FONT_OPTIONS, type FontOption } from '@/types/fontOptions.ts'
+import { TextAlignment, type TextAlignmentValue } from '@/types/configurator.ts'
 
-import { FONT_OPTIONS, type FontOption, TextAlignment, type TextAlignmentValue } from '@/types/configurator.ts'
-
-const fontOptions = ref<FontOption[]>([...FONT_OPTIONS])
+const fontOptions = ref<FontOption[]>([...Object.values(FONT_OPTIONS)])
 
 const alignOptions = ref<TextAlignmentValue[]>([TextAlignment.LEFT, TextAlignment.CENTER, TextAlignment.RIGHT])
 
@@ -50,6 +50,21 @@ const { t } = useTranslation()
       />
       <label for="textColor" class="label text-base-content text-base hover:cursor-text">
         {{ styles.textColor }}
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">{{ t('editor.form.accentColor') }}</legend>
+    <div class="inline-flex gap-2">
+      <input
+        type="color"
+        id="textColor"
+        class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none color-picker"
+        v-model="styles.accentColor"
+      />
+      <label for="textColor" class="label text-base-content text-base hover:cursor-text">
+        {{ styles.accentColor }}
       </label>
     </div>
   </fieldset>

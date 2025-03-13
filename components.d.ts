@@ -8,16 +8,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Corporate: typeof import('./src/components/templates/corporate.vue')['default']
-    Creative: typeof import('./src/components/templates/creative.vue')['default']
     DisclaimerConfig: typeof import('./src/components/configuration/DisclaimerConfig.vue')['default']
-    Elegnant: typeof import('./src/components/templates/elegnant.vue')['default']
     GeneratorForm: typeof import('./src/components/GeneratorForm.vue')['default']
     GeneratorPreview: typeof import('./src/components/GeneratorPreview.vue')['default']
     ISystemUiconsDragVertical: typeof import('~icons/system-uicons/drag-vertical')['default']
     LanguageController: typeof import('./src/components/LanguageController.vue')['default']
-    Minimalistic: typeof import('./src/components/templates/minimalistic.vue')['default']
-    MinimalTemplate: typeof import('./src/components/templates/MinimalTemplate.vue')['default']
     PersonalConfig: typeof import('./src/components/configuration/PersonalConfig.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -29,7 +24,6 @@ declare module 'vue' {
     TemplateCorporate: typeof import('./src/components/templates/TemplateCorporate.vue')['default']
     TemplateCreative: typeof import('./src/components/templates/TemplateCreative.vue')['default']
     TemplateDefault: typeof import('./src/components/templates/TemplateDefault.vue')['default']
-    TemplateElegnant: typeof import('./src/components/templates/TemplateElegnant.vue')['default']
     TemplateLuxury: typeof import('./src/components/templates/TemplateLuxury.vue')['default']
     TemplateMinimalistic: typeof import('./src/components/templates/TemplateMinimalistic.vue')['default']
     TemplateModern: typeof import('./src/components/templates/TemplateModern.vue')['default']

@@ -19,19 +19,3 @@ export enum TextAlignment {
   RIGHT = 'right',
 }
 export type TextAlignmentValue = `${TextAlignment}`
-
-export const FONT_OPTIONS = [
-  'Arial',
-  'Helvetica',
-  'Tahoma',
-  'Verdana',
-  'Trebuchet MS',
-  'Geneva',
-  'Times New Roman',
-  'Georgia',
-  'Garamond',
-  'Courier New',
-  'Lucida Console',
-  'Monaco',
-] as const
-export type FontOption = (typeof FONT_OPTIONS)[number]

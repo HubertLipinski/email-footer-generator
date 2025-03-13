@@ -29,7 +29,8 @@
       "center": "Center",
       "right": "Right",
       "disclaimer": "Disclaimer",
-      "selectTemplate": "Select template"
+      "selectTemplate": "Select template",
+      "accentColor": "Accent color"
     }
   },
   "preview": {

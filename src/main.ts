@@ -15,7 +15,7 @@ import uk from './locales/uk.json'
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
-  fallbackLocale: 'pl',
+  fallbackLocale: 'en',
   messages: { pl, en, de, es, uk },
 })
 
