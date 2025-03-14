@@ -7,7 +7,7 @@ import { useTemplateStyles } from '@/composables/useTemplateStyles.ts'
 const store = useConfiguratorStore()
 const { personal, social, styles, additional } = storeToRefs(store)
 
-const { rawColor } = useTemplateStyles()
+const { rawColor, rawUrl } = useTemplateStyles()
 
 const bodyStyles = computed<StyleValue>(() => ({
   fontFamily: `${styles.value.fontFamily}, sans-serif`,
@@ -28,9 +28,12 @@ const bodyStyles = computed<StyleValue>(() => ({
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
             <tbody>
               <tr>
-                <td style="vertical-align: middle; width: 100px; text-align: center" v-show="true">
+                <td
+                  style="vertical-align: middle; width: 100px; text-align: center"
+                  v-if="personal.image.enabled && personal.image.url"
+                >
                   <img
-                    src="https://placehold.co/400"
+                    :src="personal.image.url"
                     alt="Logo"
                     style="max-width: 80px; max-height: 80px; border-radius: 5px"
                   />
@@ -74,7 +77,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                               <tr>
                                 <td style="padding-right: 10px; padding-top: 7px">
                                   <a
-                                    href="tel:(555)123-4567"
+                                    :href="`tel:${personal.phone}`"
                                     style="text-decoration: none"
                                     :style="{ color: styles.accentColor }"
                                   >
@@ -85,7 +88,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                                       height="16"
                                       style="vertical-align: middle; margin-right: 5px"
                                     />
-                                    (TODO) 123-4567
+                                    {{ personal.phone }}
                                   </a>
                                 </td>
                               </tr>
@@ -101,9 +104,9 @@ const bodyStyles = computed<StyleValue>(() => ({
                                       alt="Website"
                                       width="16"
                                       height="16"
-                                      style="vertical-align: middle; margin-right: 5px"
+                                      style="vertical-align: bottom; margin-right: 5px"
                                     />
-                                    {{ personal.website }}
+                                    {{ rawUrl(personal.website) }}
                                   </a>
                                 </td>
                               </tr>

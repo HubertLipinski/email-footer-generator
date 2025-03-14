@@ -10,7 +10,7 @@ import { useTemplateStyles } from '@/composables/useTemplateStyles.ts'
 const store = useConfiguratorStore()
 const { personal, social, styles, additional } = storeToRefs(store)
 
-const { rawColor } = useTemplateStyles()
+const { rawColor, rawUrl } = useTemplateStyles()
 
 const bodyStyles = computed<StyleValue>(() => ({
   fontFamily: `${styles.value.fontFamily}, sans-serif`,
@@ -26,12 +26,17 @@ const bodyStyles = computed<StyleValue>(() => ({
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" :style="bodyStyles">
     <tbody>
       <tr>
+        <td style="padding: 0 5px 10px 5px" v-if="personal.image.enabled && personal.image.url">
+          <img :src="personal.image.url" alt="Logo" style="max-width: 100px; max-height: 50px" />
+        </td>
+      </tr>
+      <tr>
         <td style="padding: 0 5px 5px; font-weight: bold; font-size: 1.125em">
           {{ personal.name }}
         </td>
       </tr>
       <tr v-if="personal.position">
-        <td style="padding: 0 5px 10px 5px">
+        <td style="padding: 0 5px 12px 5px">
           {{ personal.position }} <span v-if="personal.company">| {{ personal.company }}</span>
         </td>
       </tr>
@@ -44,13 +49,18 @@ const bodyStyles = computed<StyleValue>(() => ({
       </tr>
       <tr v-if="personal.website">
         <td style="padding: 0 5px 10px 5px">
-          <a :href="personal.website" target="_blank" style="text-decoration: none">
-            {{ personal.website }}
+          <a
+            :href="personal.website"
+            target="_blank"
+            style="text-decoration: none"
+            :style="{ color: styles.accentColor }"
+          >
+            {{ rawUrl(personal.website) }}
           </a>
         </td>
       </tr>
       <tr v-if="social.enabled && social.selected.length">
-        <td>
+        <td style="padding-top: 2px">
           <table
             role="presentation"
             cellspacing="0"

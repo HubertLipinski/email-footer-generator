@@ -13,11 +13,16 @@ export const useConfiguratorStore = defineStore('configurator', () => {
   })
 
   const personal = ref<PersonalConfig>({
-    name: 'John Doe',
-    position: 'Software Engineer',
-    email: 'mail@example.com',
-    company: '',
-    website: '',
+    name: 'John Smith',
+    position: 'Marketing Manager',
+    email: 'john.smith@example.com',
+    company: 'Example Corp',
+    website: 'https://example-website.com',
+    phone: '123 456 789',
+    image: {
+      enabled: true,
+      url: 'https://placehold.co/400',
+    },
   })
 
   const social = ref<{ enabled: boolean; selected: SocialOption[] }>({

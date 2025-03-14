@@ -30,7 +30,10 @@
       "right": "Справа",
       "disclaimer": "Застереження",
       "selectTemplate": "Виберіть шаблон",
-      "accentColor": "Колір акценту"
+      "accentColor": "Колір акценту",
+      "phone": "Телефон",
+      "includeImage": "Додати зображення або логотип",
+      "imageUrl": "URL зображення"
     }
   },
   "preview": {
@@ -50,5 +53,11 @@
     "luxury": "Розкіш",
     "minimalistic": "Мінімалістичний",
     "modern": "Сучасний"
+  },
+  "validation": {
+    "required": "Поле є обов'язковим",
+    "invalid_url": "Вкажіть дійсну URL-адресу",
+    "invalid_regex": "Вкажіть правильний формат даних",
+    "invalid_email": "Вкажіть правильну електронну пошту"
   }
 }

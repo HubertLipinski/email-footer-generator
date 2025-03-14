@@ -30,7 +30,10 @@
       "right": "Prawej",
       "disclaimer": "Klauzula",
       "selectTemplate": "Wybierz szablon",
-      "accentColor": "Kolor akcentu"
+      "accentColor": "Kolor akcentu",
+      "phone": "Numer telefonu",
+      "includeImage": "Dołącz zdjęcie lub logo",
+      "imageUrl": "URL obrazka"
     }
   },
   "preview": {
@@ -50,5 +53,11 @@
     "luxury": "Luksusowy",
     "minimalistic": "Minimalistyczny",
     "modern": "Nowoczesny"
+  },
+  "validation": {
+    "required": "Pole jest wymagane",
+    "invalid_url": "Podaj poprawny URL",
+    "invalid_regex": "Podaj poprawny format danych",
+    "invalid_email": "Podaj poprawny adres email"
   }
 }

@@ -10,7 +10,7 @@ import { useTemplateStyles } from '@/composables/useTemplateStyles.ts'
 const store = useConfiguratorStore()
 const { personal, social, styles, additional } = storeToRefs(store)
 
-const { rawColor } = useTemplateStyles()
+const { rawColor, rawUrl } = useTemplateStyles()
 
 const bodyStyles = computed<StyleValue>(() => ({
   fontFamily: `${styles.value.fontFamily}, sans-serif`,
@@ -52,8 +52,8 @@ const bodyStyles = computed<StyleValue>(() => ({
                     </tbody>
                   </table>
                 </td>
-                <td style="width: 40%; text-align: right" v-show="true">
-                  <img src="https://placehold.co/400" alt="Logo" style="max-width: 100px; max-height: 50px" />
+                <td style="width: 40%; text-align: right" v-if="personal.image.enabled && personal.image.url">
+                  <img :src="personal.image.url" alt="Logo" style="max-width: 100px; max-height: 50px" />
                 </td>
               </tr>
             </tbody>
@@ -84,9 +84,13 @@ const bodyStyles = computed<StyleValue>(() => ({
                       </tr>
                       <tr>
                         <td style="font-size: 12px; padding-top: 10px">
-                          <a href="tel:(555)123-4567" style="text-decoration: none" :style="{ color: styles.textColor }"
-                            >(TODO) 123-4567</a
+                          <a
+                            :href="`tel:${personal.phone}`"
+                            style="text-decoration: none"
+                            :style="{ color: styles.textColor }"
                           >
+                            {{ personal.phone }}
+                          </a>
                         </td>
                       </tr>
                     </tbody>
@@ -106,7 +110,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                             style="text-decoration: none"
                             :style="{ color: styles.textColor }"
                           >
-                            {{ personal.website }}
+                            {{ rawUrl(personal.website) }}
                           </a>
                         </td>
                       </tr>

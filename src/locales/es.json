@@ -30,7 +30,10 @@
       "right": "Derecha",
       "disclaimer": "Aviso legal",
       "selectTemplate": "Seleccione plantilla",
-      "accentColor": "Color de acento"
+      "accentColor": "Color de acento",
+      "phone": "Teléfono",
+      "includeImage": "Incluir imagen o logotipo",
+      "imageUrl": "URL de la imagen"
     }
   },
   "preview": {
@@ -50,5 +53,11 @@
     "luxury": "Lujo",
     "minimalistic": "Minimalista",
     "modern": "Moderno"
+  },
+  "validation": {
+    "required": "El campo es obligatorio",
+    "invalid_url": "Proporcione una URL válida",
+    "invalid_regex": "Proporcione un formato de datos válido",
+    "invalid_email": "Proporcione un correo electrónico válido"
   }
 }

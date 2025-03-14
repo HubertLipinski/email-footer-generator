@@ -7,7 +7,18 @@ export function useTemplateStyles() {
     return hex.substring(1)
   }
 
+  function rawUrl(str: string): string {
+    let url = str
+
+    url = url.replace('https://', '')
+    url = url.replace('http://', '')
+    url = url.replace('www.', '')
+
+    return url.replace(' ', '')
+  }
+
   return {
     rawColor,
+    rawUrl,
   }
 }

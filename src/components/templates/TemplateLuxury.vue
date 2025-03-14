@@ -10,7 +10,7 @@ import { computed, type StyleValue } from 'vue'
 const store = useConfiguratorStore()
 const { personal, social, styles, additional } = storeToRefs(store)
 
-const { rawColor } = useTemplateStyles()
+const { rawColor, rawUrl } = useTemplateStyles()
 
 const bodyStyles = computed<StyleValue>(() => ({
   fontFamily: `${styles.value.fontFamily}, sans-serif`,
@@ -46,7 +46,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                   </p>
                 </td>
               </tr>
-              <tr v-if="true">
+              <tr v-if="personal.image.enabled && personal.image.url">
                 <td style="text-align: center; padding-bottom: 15px">
                   <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
                     <tbody>
@@ -69,7 +69,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                         </td>
                         <td style="width: 20%; text-align: center">
                           <img
-                            src="https://placehold.co/400"
+                            :src="personal.image.url"
                             alt="Logo"
                             style="max-width: 100px; max-height: 50px; margin: 0 15px; vertical-align: middle"
                           />
@@ -106,31 +106,33 @@ const bodyStyles = computed<StyleValue>(() => ({
                       {{ personal.email }}
                     </a>
 
-                    <span v-if="true">
+                    <span>
                       &nbsp;|&nbsp;
-                      <a href="tel:(555)123-4567" style="text-decoration: none" :style="{ color: styles.accentColor }"
-                        >(555) 123-4567</a
+                      <a
+                        :href="`tel:${personal.phone}`"
+                        style="text-decoration: none"
+                        :style="{ color: styles.accentColor }"
                       >
+                        {{ personal.phone }}
+                      </a>
                     </span>
 
                     <span v-if="personal.website">
                       &nbsp;|&nbsp;
                       <a :href="personal.website" style="text-decoration: none" :style="{ color: styles.accentColor }">
-                        {{ personal.website }}
+                        {{ rawUrl(personal.website) }}
                       </a>
                     </span>
                   </p>
                 </td>
               </tr>
-              <tr>
+              <tr v-if="false">
                 <td style="text-align: center">
-                  <p style="margin: 0; font-size: 14px; color: #666">
-                    123 Luxury Avenue, Suite 500, New York, NY 10022
-                  </p>
+                  <p style="margin: 0; font-size: 14px; color: #666">Address</p>
                 </td>
               </tr>
               <tr v-if="social.enabled && social.selected.length">
-                <td style="text-align: center; padding-top: 15px">
+                <td style="text-align: center">
                   <a
                     v-for="icon in social.selected"
                     :key="icon.label"

@@ -30,7 +30,10 @@
       "right": "Right",
       "disclaimer": "Disclaimer",
       "selectTemplate": "Select template",
-      "accentColor": "Accent color"
+      "accentColor": "Accent color",
+      "phone": "Phone",
+      "includeImage": "Include image or logo",
+      "imageUrl": "Image url"
     }
   },
   "preview": {
@@ -50,5 +53,11 @@
     "luxury": "Luxury",
     "minimalistic": "Minimalistic",
     "modern": "Modern"
+  },
+  "validation": {
+    "required": "Field is required",
+    "invalid_url": "Provide a valid URL",
+    "invalid_regex": "Provide a valid data format",
+    "invalid_email": "Provide a valid email"
   }
 }

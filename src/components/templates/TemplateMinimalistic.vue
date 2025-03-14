@@ -10,7 +10,7 @@ import { computed, type StyleValue } from 'vue'
 const store = useConfiguratorStore()
 const { personal, social, styles, additional } = storeToRefs(store)
 
-const { rawColor } = useTemplateStyles()
+const { rawColor, rawUrl } = useTemplateStyles()
 
 const bodyStyles = computed<StyleValue>(() => ({
   fontFamily: `${styles.value.fontFamily}, sans-serif`,
@@ -28,9 +28,9 @@ const bodyStyles = computed<StyleValue>(() => ({
         <td>
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
             <tbody>
-              <tr>
+              <tr v-if="personal.image.enabled && personal.image.url">
                 <td style="padding-bottom: 10px">
-                  <img src="https://placehold.co/400" alt="Logo" style="max-width: 120px; max-height: 60px" />
+                  <img :src="personal.image.url" alt="Logo" style="max-width: 120px; max-height: 60px" />
                 </td>
               </tr>
               <tr>
@@ -61,16 +61,20 @@ const bodyStyles = computed<StyleValue>(() => ({
                   >
                     {{ personal.email }}
                   </a>
-                  <span v-if="true">
+                  <span>
                     &nbsp;•&nbsp;
-                    <a href="tel:(555)123-4567" style="text-decoration: none" :style="{ color: styles.textColor }"
-                      >(TODO) 123-4567</a
+                    <a
+                      :href="`tel:${personal.phone}`"
+                      style="text-decoration: none"
+                      :style="{ color: styles.textColor }"
                     >
+                      {{ personal.phone }}
+                    </a>
                   </span>
                   <span v-if="personal.website">
                     &nbsp;•&nbsp;
                     <a :href="personal.website" style="text-decoration: none" :style="{ color: styles.textColor }">
-                      {{ personal.website }}
+                      {{ rawUrl(personal.website) }}
                     </a>
                   </span>
                 </td>

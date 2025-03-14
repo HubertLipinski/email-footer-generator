@@ -94,9 +94,15 @@ onMounted(() => {
         </div>
       </fieldset>
 
-      <Draggable v-model="social.selected" item-key="label" handle=".drag-handle" tag="div" class="overflow-hidden">
+      <Draggable
+        v-model="social.selected"
+        item-key="label"
+        handle=".drag-handle"
+        tag="div"
+        class="overflow-hidden pt-2"
+      >
         <template #item="{ element, index }">
-          <div class="flex w-full items-start gap-2 pt-4">
+          <div class="flex w-full items-start gap-2 px-1 py-3">
             <span class="drag-handle cursor-move text-lg pt-2.25 pr-2">
               <i-system-uicons-drag-vertical />
             </span>
@@ -116,6 +122,7 @@ onMounted(() => {
               type="color"
               class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
               v-model="element.color"
+              v-show="false"
             />
           </div>
         </template>

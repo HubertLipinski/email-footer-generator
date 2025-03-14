@@ -4,6 +4,11 @@ export type PersonalConfig = {
   email: string
   company: string
   website: string | null
+  phone: string | null
+  image: {
+    enabled: boolean
+    url: string
+  }
 }
 
 export type SocialOption = {
