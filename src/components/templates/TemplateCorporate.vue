@@ -52,60 +52,62 @@ const bodyStyles = computed<StyleValue>(() => ({
                       <tr>
                         <td style="padding-top: 8px">
                           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse">
-                            <tr v-if="personal.email">
-                              <td style="padding-right: 10px; padding-top: 7px">
-                                <a
-                                  :href="`mailto:${personal.email}`"
-                                  style="text-decoration: none"
-                                  :style="{ color: styles.accentColor }"
-                                >
-                                  <img
-                                    :src="`https://api.iconify.design/material-symbols:alternate-email.svg?color=%23${rawColor(styles.accentColor)}`"
-                                    alt="Email"
-                                    width="16"
-                                    height="16"
-                                    style="vertical-align: middle; margin-right: 5px"
-                                  />
-                                  {{ personal.email }}
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="padding-right: 10px; padding-top: 7px">
-                                <a
-                                  href="tel:(555)123-4567"
-                                  style="text-decoration: none"
-                                  :style="{ color: styles.accentColor }"
-                                >
-                                  <img
-                                    :src="`https://api.iconify.design/material-symbols:phone-enabled.svg?color=%23${rawColor(styles.accentColor)}`"
-                                    alt="Phone"
-                                    width="16"
-                                    height="16"
-                                    style="vertical-align: middle; margin-right: 5px"
-                                  />
-                                  (TODO) 123-4567
-                                </a>
-                              </td>
-                            </tr>
-                            <tr v-if="personal.website">
-                              <td style="padding-right: 10px; padding-top: 7px">
-                                <a
-                                  href="https://www.example.com"
-                                  style="text-decoration: none"
-                                  :style="{ color: styles.accentColor }"
-                                >
-                                  <img
-                                    :src="`https://api.iconify.design/material-symbols:globe.svg?color=%23${rawColor(styles.accentColor)}`"
-                                    alt="Website"
-                                    width="16"
-                                    height="16"
-                                    style="vertical-align: middle; margin-right: 5px"
-                                  />
-                                  {{ personal.website }}
-                                </a>
-                              </td>
-                            </tr>
+                            <tbody>
+                              <tr v-if="personal.email">
+                                <td style="padding-right: 10px; padding-top: 7px">
+                                  <a
+                                    :href="`mailto:${personal.email}`"
+                                    style="text-decoration: none"
+                                    :style="{ color: styles.accentColor }"
+                                  >
+                                    <img
+                                      :src="`https://api.iconify.design/material-symbols:alternate-email.svg?color=%23${rawColor(styles.accentColor)}`"
+                                      alt="Email"
+                                      width="16"
+                                      height="16"
+                                      style="vertical-align: middle; margin-right: 5px"
+                                    />
+                                    {{ personal.email }}
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding-right: 10px; padding-top: 7px">
+                                  <a
+                                    href="tel:(555)123-4567"
+                                    style="text-decoration: none"
+                                    :style="{ color: styles.accentColor }"
+                                  >
+                                    <img
+                                      :src="`https://api.iconify.design/material-symbols:phone-enabled.svg?color=%23${rawColor(styles.accentColor)}`"
+                                      alt="Phone"
+                                      width="16"
+                                      height="16"
+                                      style="vertical-align: middle; margin-right: 5px"
+                                    />
+                                    (TODO) 123-4567
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr v-if="personal.website">
+                                <td style="padding-right: 10px; padding-top: 7px">
+                                  <a
+                                    href="https://www.example.com"
+                                    style="text-decoration: none"
+                                    :style="{ color: styles.accentColor }"
+                                  >
+                                    <img
+                                      :src="`https://api.iconify.design/material-symbols:globe.svg?color=%23${rawColor(styles.accentColor)}`"
+                                      alt="Website"
+                                      width="16"
+                                      height="16"
+                                      style="vertical-align: middle; margin-right: 5px"
+                                    />
+                                    {{ personal.website }}
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
