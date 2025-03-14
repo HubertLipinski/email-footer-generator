@@ -28,31 +28,35 @@ const bodyStyles = computed<StyleValue>(() => ({
       <tr>
         <td style="padding-bottom: 15px">
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-            <tr>
-              <td style="width: 60%">
-                <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-                  <tr>
-                    <td
-                      style="font-size: 20px; font-weight: 700; letter-spacing: 1px"
-                      :style="{ color: styles.accentColor }"
-                    >
-                      {{ personal.name }}
-                    </td>
-                  </tr>
-                  <tr v-if="personal.position">
-                    <td
-                      style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; padding-top: 5px"
-                      :style="{ color: styles.textColor }"
-                    >
-                      {{ personal.position }}
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td style="width: 40%; text-align: right" v-show="true">
-                <img src="https://placehold.co/400" alt="Logo" style="max-width: 100px; max-height: 50px" />
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td style="width: 60%">
+                  <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
+                    <tbody>
+                      <tr>
+                        <td
+                          style="font-size: 20px; font-weight: 700; letter-spacing: 1px"
+                          :style="{ color: styles.accentColor }"
+                        >
+                          {{ personal.name }}
+                        </td>
+                      </tr>
+                      <tr v-if="personal.position">
+                        <td
+                          style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; padding-top: 5px"
+                          :style="{ color: styles.textColor }"
+                        >
+                          {{ personal.position }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="width: 40%; text-align: right" v-show="true">
+                  <img src="https://placehold.co/400" alt="Logo" style="max-width: 100px; max-height: 50px" />
+                </td>
+              </tr>
+            </tbody>
           </table>
         </td>
       </tr>
@@ -62,49 +66,55 @@ const bodyStyles = computed<StyleValue>(() => ({
           :style="{ borderColor: styles.accentColor }"
         >
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-            <tr>
-              <td style="width: 50%">
-                <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-                  <tr>
-                    <td style="font-size: 12px">
-                      <a
-                        :href="`mailto:${personal.email}`"
-                        style="text-decoration: none"
-                        :style="{ color: styles.accentColor }"
-                      >
-                        {{ personal.email }}
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="font-size: 12px; padding-top: 10px">
-                      <a href="tel:(555)123-4567" style="text-decoration: none" :style="{ color: styles.textColor }"
-                        >(TODO) 123-4567</a
-                      >
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td style="width: 50%; text-align: right">
-                <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
-                  <tr v-if="personal.company">
-                    <td style="font-size: 12px; text-align: right">{{ personal.company }}</td>
-                  </tr>
-                  <tr v-if="personal.website">
-                    <td style="font-size: 12px; padding-top: 10px; text-align: right">
-                      <a
-                        :href="personal.website"
-                        target="_blank"
-                        style="text-decoration: none"
-                        :style="{ color: styles.textColor }"
-                      >
-                        {{ personal.website }}
-                      </a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td style="width: 50%">
+                  <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
+                    <tbody>
+                      <tr>
+                        <td style="font-size: 12px">
+                          <a
+                            :href="`mailto:${personal.email}`"
+                            style="text-decoration: none"
+                            :style="{ color: styles.accentColor }"
+                          >
+                            {{ personal.email }}
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 12px; padding-top: 10px">
+                          <a href="tel:(555)123-4567" style="text-decoration: none" :style="{ color: styles.textColor }"
+                            >(TODO) 123-4567</a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="width: 50%; text-align: right">
+                  <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
+                    <tbody>
+                      <tr v-if="personal.company">
+                        <td style="font-size: 12px; text-align: right">{{ personal.company }}</td>
+                      </tr>
+                      <tr v-if="personal.website">
+                        <td style="font-size: 12px; padding-top: 10px; text-align: right">
+                          <a
+                            :href="personal.website"
+                            target="_blank"
+                            style="text-decoration: none"
+                            :style="{ color: styles.textColor }"
+                          >
+                            {{ personal.website }}
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </td>
       </tr>

@@ -59,18 +59,20 @@ const bodyStyles = computed<StyleValue>(() => ({
             :align="styles.alignment"
             style="margin: auto"
           >
-            <tr>
-              <td v-for="icon in social.selected" :key="icon.label" style="padding: 0 5px">
-                <a :href="icon.value" target="_blank" style="text-decoration: none">
-                  <img
-                    :src="`${icon.icon}?color=%23${rawColor(icon.color)}`"
-                    :alt="icon.label"
-                    width="24"
-                    height="24"
-                  />
-                </a>
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td v-for="icon in social.selected" :key="icon.label" style="padding: 0 5px">
+                  <a :href="icon.value" target="_blank" style="text-decoration: none">
+                    <img
+                      :src="`${icon.icon}?color=%23${rawColor(icon.color)}`"
+                      :alt="icon.label"
+                      width="24"
+                      height="24"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </td>
       </tr>
