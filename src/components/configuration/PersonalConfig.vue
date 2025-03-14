@@ -51,7 +51,7 @@ const schema = toTypedSchema(
       @submit.prevent="() => {}"
       class="flex flex-col gap-2"
     >
-      <div class="sm:join gap-4">
+      <div class="sm:join gap-6">
         <fieldset class="fieldset join-item sm:w-1/2">
           <legend class="fieldset-legend">{{ t('editor.form.name') }}</legend>
           <Field
@@ -78,7 +78,7 @@ const schema = toTypedSchema(
         </fieldset>
       </div>
 
-      <div class="sm:join gap-4">
+      <div class="sm:join gap-6">
         <fieldset class="fieldset join-item sm:w-1/2">
           <legend class="fieldset-legend">{{ t('editor.form.email') }}</legend>
           <Field
