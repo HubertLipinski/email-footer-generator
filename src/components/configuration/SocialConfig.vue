@@ -148,7 +148,7 @@ watch(selected, () => validate())
                   type="color"
                   class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
                   v-model="element.color"
-                  v-show="true"
+                  v-show="false"
                 />
               </div>
               <div v-if="element.error" class="inline-flex text-error text-xs">
