@@ -16,6 +16,7 @@ export type SocialOption = {
   value: string
   icon: string
   color: string
+  error?: string
 }
 
 export enum TextAlignment {
