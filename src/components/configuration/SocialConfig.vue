@@ -129,7 +129,7 @@ watch(selected, () => validate())
       >
         <template #item="{ element, index }">
           <div class="flex w-full items-start gap-2 pt-4 py-1">
-            <span class="drag-handle cursor-move text-lg pt-2.25 pr-2">
+            <span class="drag-handle cursor-move text-lg pr-2 pt-[10px]">
               <i-system-uicons-drag-vertical />
             </span>
             <div class="flex flex-col w-full gap-y-2">
