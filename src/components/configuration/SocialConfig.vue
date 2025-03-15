@@ -133,7 +133,7 @@ watch(selected, () => validate())
               <i-system-uicons-drag-vertical />
             </span>
             <div class="flex flex-col w-full gap-y-2">
-              <div class="inline-flex">
+              <div class="inline-flex gap-2">
                 <label class="input grow-1 mr-1">
                   <component :is="getSocialComponent(element)" :style="{ color: element.color }" />
                   <input
@@ -148,7 +148,7 @@ watch(selected, () => validate())
                   type="color"
                   class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
                   v-model="element.color"
-                  v-show="false"
+                  v-show="true"
                 />
               </div>
               <div v-if="element.error" class="inline-flex text-error text-xs">
