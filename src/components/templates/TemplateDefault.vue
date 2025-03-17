@@ -18,15 +18,15 @@ const bodyStyles = computed<StyleValue>(() => ({
   backgroundColor: styles.value.backgroundColor,
   textAlign: styles.value.alignment,
   color: styles.value.textColor,
-  padding: '0',
+  padding: '10px',
 }))
 </script>
 
 <template>
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" :style="bodyStyles">
     <tbody>
-      <tr>
-        <td style="padding: 0 5px 10px 5px" v-if="personal.image.enabled && personal.image.url">
+      <tr v-if="personal.image.enabled && personal.image.url">
+        <td style="padding: 0 5px 10px 5px">
           <img :src="personal.image.url" alt="Logo" style="max-width: 100px; max-height: 50px" />
         </td>
       </tr>

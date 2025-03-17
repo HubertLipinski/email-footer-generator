@@ -5,7 +5,7 @@ import TheNavbar from '@/components/ui/TheNavbar.vue'
 
 <template>
   <div class="h-svh lg:h-screen grid transition-all duration-300">
-    <div class="flex flex-col gap-6 container max-w-3xl mx-auto px-2 md:px-0 pt-4">
+    <div class="flex flex-col gap-6 container max-w-3xl mx-auto px-2 md:px-1 pt-4">
       <TheNavbar />
 
       <div class="grow-0 bg-base-200 rounded-box p-6 w-full gap-6 overflow-x-hidden">

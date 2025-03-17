@@ -29,20 +29,20 @@ const bodyStyles = computed<StyleValue>(() => ({
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
             <tbody>
               <tr v-if="personal.image.enabled && personal.image.url">
-                <td style="padding-bottom: 10px">
+                <td style="padding: 10px 10px 15px 10px">
                   <img :src="personal.image.url" alt="Logo" style="max-width: 120px; max-height: 60px" />
                 </td>
               </tr>
               <tr>
-                <td style="font-size: 16px; font-weight: bold">{{ personal.name }}</td>
+                <td style="font-size: 16px; font-weight: bold; padding-left: 10px">{{ personal.name }}</td>
               </tr>
               <tr>
-                <td style="padding-top: 8px" :style="{ color: styles.textColor }">
+                <td style="padding-top: 8px; padding-left: 10px" :style="{ color: styles.textColor }">
                   {{ personal.position }} <span v-if="personal.company">| {{ personal.company }}</span>
                 </td>
               </tr>
               <tr>
-                <td style="padding-top: 14px">
+                <td style="padding-top: 14px; padding-left: 10px">
                   <table cellpadding="0" cellspacing="0" style="border-collapse: collapse">
                     <tbody>
                       <tr>
@@ -53,7 +53,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                 </td>
               </tr>
               <tr>
-                <td style="padding-top: 14px">
+                <td style="padding-top: 14px; padding-left: 10px">
                   <a
                     :href="`mailto:${personal.email}`"
                     style="text-decoration: none"
@@ -80,7 +80,7 @@ const bodyStyles = computed<StyleValue>(() => ({
                 </td>
               </tr>
               <tr v-if="social.enabled && social.selected.length">
-                <td style="padding-top: 14px">
+                <td style="padding-top: 14px; padding-left: 10px">
                   <a
                     v-for="icon in social.selected"
                     :key="icon.label"
@@ -99,7 +99,7 @@ const bodyStyles = computed<StyleValue>(() => ({
               </tr>
               <tr v-if="additional.disclaimer.enabled">
                 <td
-                  style="padding-top: 15px; font-size: 12px"
+                  style="padding-top: 15px; font-size: 12px; padding-left: 10px; padding-bottom: 10px"
                   :style="`color:${additional.disclaimer.color}; text-align: ${styles.alignment}`"
                 >
                   {{ additional.disclaimer.content }}

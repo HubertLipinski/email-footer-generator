@@ -26,7 +26,7 @@ const bodyStyles = computed<StyleValue>(() => ({
   <table cellpadding="0" cellspacing="0" :style="bodyStyles">
     <tbody>
       <tr>
-        <td style="padding-bottom: 15px">
+        <td style="padding: 10px 10px 15px 10px">
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
             <tbody>
               <tr>
@@ -62,7 +62,7 @@ const bodyStyles = computed<StyleValue>(() => ({
       </tr>
       <tr>
         <td
-          style="padding: 15px 0; border-top: 2px solid; border-bottom: 2px solid"
+          style="padding: 10px 10px 15px 10px; border-top: 2px solid; border-bottom: 2px solid"
           :style="{ borderColor: styles.accentColor }"
         >
           <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%">
@@ -142,7 +142,7 @@ const bodyStyles = computed<StyleValue>(() => ({
       </tr>
       <tr v-if="additional.disclaimer.enabled">
         <td
-          style="padding-top: 15px; font-size: 12px"
+          style="padding: 15px 10px 10px 10px; font-size: 12px"
           :style="`color:${additional.disclaimer.color}; text-align: ${styles.alignment}`"
         >
           <p>

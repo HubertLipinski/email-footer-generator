@@ -51,7 +51,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
                   window.addEventListener('load', sendHeight);
                   window.addEventListener('resize', sendHeight);
                 <\/script>
-                <style>* { margin: 0; padding: 0; box-sizing: border-box; } html, body { width: 100%; overflow: hidden; padding: 5px}</style>
+                <style>* { margin: 0; padding: 0; box-sizing: border-box; } html, body { width: 100%; overflow: hidden; padding: 0}</style>
                 </head>
                 <body>${htmlString.value}</body>
                 </html>`

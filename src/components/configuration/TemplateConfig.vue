@@ -4,7 +4,7 @@ import TemplateCorporate from '@/components/templates/TemplateCorporate.vue'
 import TemplateCreative from '@/components/templates/TemplateCreative.vue'
 import TemplateMinimalistic from '@/components/templates/TemplateMinimalistic.vue'
 import TemplateLuxury from '../templates/TemplateLuxury.vue'
-import TemplateModern from '@/components/templates/TemplateModern.vue'
+// import TemplateModern from '@/components/templates/TemplateModern.vue'
 
 import { ref } from 'vue'
 import { useTranslation } from '@/composables/useTranslation.ts'
@@ -19,38 +19,44 @@ const { t } = useTranslation()
 const store = useConfiguratorStore()
 const { template } = storeToRefs(store)
 
+import imgDefault from '@/assets/templates/default.webp'
+import imgCorporate from '@/assets/templates/corporate.webp'
+import imgCreative from '@/assets/templates/creative.webp'
+import imgMinimalistic from '@/assets/templates/minimalistic.webp'
+import imgLuxury from '@/assets/templates/luxury.webp'
+
 const templates = ref([
   {
     name: THEME_OPTIONS.Default,
-    img: 'https://placehold.co/1280x400', // TODO: images from assets
+    img: imgDefault,
     component: TemplateDefault,
   },
   {
-    name: THEME_OPTIONS.Corporate,
-    img: 'https://placehold.co/1280x400',
-    component: TemplateCorporate,
-  },
-  {
     name: THEME_OPTIONS.Creative,
-    img: 'https://placehold.co/1280x400',
+    img: imgCreative,
     component: TemplateCreative,
   },
   {
-    name: THEME_OPTIONS.Minimalistic,
-    img: 'https://placehold.co/1280x400',
-    component: TemplateMinimalistic,
+    name: THEME_OPTIONS.Corporate,
+    img: imgCorporate,
+    component: TemplateCorporate,
   },
   {
     name: THEME_OPTIONS.Luxury,
-    img: 'https://placehold.co/1280x400',
+    img: imgLuxury,
     component: TemplateLuxury,
   },
   {
-    name: 'modern',
-    img: 'https://placehold.co/1280x400',
-    component: TemplateModern,
-    disabled: true,
+    name: THEME_OPTIONS.Minimalistic,
+    img: imgMinimalistic,
+    component: TemplateMinimalistic,
   },
+  // {
+  //   name: 'modern',
+  //   img: 'https://placehold.co/1280x400',
+  //   component: TemplateModern,
+  //   disabled: true,
+  // },
 ])
 
 function selectTemplate({ name, component }: { name: string; component: Component }) {
@@ -68,11 +74,11 @@ function selectTemplate({ name, component }: { name: string; component: Componen
       >Based on the template selected, the available options and styles in the configurator may change</span
     >
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 items-center">
       <button
         v-for="tmpl in templates"
         :key="tmpl.name"
-        class="flex flex-col p-2 gap-1 transition-all duration-300 hover:scale-98 hover:cursor-pointer brightness-95 hover:brightness-100 rounded-lg disabled:brightness-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
+        class="flex flex-col p-2 gap-3 transition-all justify-between duration-300 hover:scale-98 hover:cursor-pointer brightness-95 hover:brightness-100 rounded-lg disabled:brightness-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
         :class="
           template.selected.name === tmpl.name
             ? 'border-1 border-primary font-semibold hover:scale-100 brightness-100'
