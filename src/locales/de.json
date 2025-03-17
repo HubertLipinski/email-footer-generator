@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Konfigurieren Sie Ihre E-Mail-Signatur",
+    "template": "Schablone",
     "personal": "Persönlich",
     "social": "Sozial",
     "styles": "Stile",
@@ -27,7 +28,12 @@
       "left": "Links",
       "center": "Zentriert",
       "right": "Rechts",
-      "disclaimer": "Haftungsausschluss"
+      "disclaimer": "Haftungsausschluss",
+      "selectTemplate": "Schablone auswählen",
+      "accentColor": "Akzentfarbe",
+      "phone": "Telefon",
+      "includeImage": "Bild oder Logo einfügen",
+      "imageUrl": "Bild-URL"
     }
   },
   "preview": {
@@ -37,6 +43,21 @@
     "copy": "Kopieren",
     "wait": "Warten...",
     "done": "Fertig!",
-    "minified": "Verkleinerte version"
+    "minified": "Verkleinerte version",
+    "selectedTemplate": "Ausgewählte schablone"
+  },
+  "template": {
+    "default": "Standard",
+    "corporate": "Unternehmen",
+    "creative": "Kreative",
+    "luxury": "Luxus",
+    "minimalistic": "Minimalistisch",
+    "modern": "Modern"
+  },
+  "validation": {
+    "required": "Feld ist erforderlich",
+    "invalid_url": "Geben Sie eine gültige URL an",
+    "invalid_regex": "Geben Sie ein gültiges Datenformat an",
+    "invalid_email": "Geben Sie eine gültige E-Mail-Adresse an"
   }
 }

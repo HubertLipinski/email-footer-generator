@@ -5,6 +5,7 @@ import PersonalConfig from '@/components/configuration/PersonalConfig.vue'
 import SocialConfig from '@/components/configuration/SocialConfig.vue'
 import StyleConfig from '@/components/configuration/StyleConfig.vue'
 import DisclaimerConfig from '@/components/configuration/DisclaimerConfig.vue'
+import TemplateConfig from '@/components/configuration/TemplateConfig.vue'
 import { useTranslation } from '@/composables/useTranslation.ts'
 
 const { t } = useTranslation()
@@ -16,8 +17,11 @@ const { t } = useTranslation()
       <h2 class="text-xl font-semibold">{{ t('editor.configureYourEmailFooter') }}</h2>
     </div>
 
-    <TabsWrapper>
+    <TabsWrapper class="mt-4">
       <TransitionGroup name="slide-fade-list" appear>
+        <TabContent title="editor.template" key="template">
+          <TemplateConfig />
+        </TabContent>
         <TabContent title="editor.personal" key="personal">
           <PersonalConfig />
         </TabContent>

@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Налаштуйте підпис електронної пошти",
+    "template": "Шаблон",
     "personal": "Особисте",
     "social": "Соціальне",
     "styles": "Стилі",
@@ -27,7 +28,12 @@
       "left": "Зліва",
       "center": "По центру",
       "right": "Справа",
-      "disclaimer": "Застереження"
+      "disclaimer": "Застереження",
+      "selectTemplate": "Виберіть шаблон",
+      "accentColor": "Колір акценту",
+      "phone": "Телефон",
+      "includeImage": "Додати зображення або логотип",
+      "imageUrl": "URL зображення"
     }
   },
   "preview": {
@@ -37,6 +43,21 @@
     "copy": "Копіювати",
     "wait": "Зачекайте...",
     "done": "Готово!",
-    "minified": "Скорочена версія"
+    "minified": "Скорочена версія",
+    "selectedTemplate": "Обраний шаблон"
+  },
+  "template": {
+    "default": "Стандартно",
+    "corporate": "Корпоративний",
+    "creative": "Креативний",
+    "luxury": "Розкіш",
+    "minimalistic": "Мінімалістичний",
+    "modern": "Сучасний"
+  },
+  "validation": {
+    "required": "Поле є обов'язковим",
+    "invalid_url": "Вкажіть дійсну URL-адресу",
+    "invalid_regex": "Вкажіть правильний формат даних",
+    "invalid_email": "Вкажіть правильну електронну пошту"
   }
 }

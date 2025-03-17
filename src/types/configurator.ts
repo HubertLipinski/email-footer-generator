@@ -4,6 +4,11 @@ export type PersonalConfig = {
   email: string
   company: string
   website: string | null
+  phone: string | null
+  image: {
+    enabled: boolean
+    url: string
+  }
 }
 
 export type SocialOption = {
@@ -11,6 +16,7 @@ export type SocialOption = {
   value: string
   icon: string
   color: string
+  error?: string
 }
 
 export enum TextAlignment {
@@ -19,19 +25,3 @@ export enum TextAlignment {
   RIGHT = 'right',
 }
 export type TextAlignmentValue = `${TextAlignment}`
-
-export const FONT_OPTIONS = [
-  'Arial',
-  'Helvetica',
-  'Tahoma',
-  'Verdana',
-  'Trebuchet MS',
-  'Geneva',
-  'Times New Roman',
-  'Georgia',
-  'Garamond',
-  'Courier New',
-  'Lucida Console',
-  'Monaco',
-] as const
-export type FontOption = (typeof FONT_OPTIONS)[number]

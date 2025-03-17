@@ -9,7 +9,10 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
 
   watchEffect(async () => {
     if (!domElement.value) return
+    await render()
+  })
 
+  async function render(): Promise<void> {
     const rootElement = domElement.value.getElementsByTagName(root)[0] as HTMLElement
     htmlString.value = stripVueGeneratedTags(rootElement.outerHTML)
 
@@ -24,7 +27,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     Prism.highlightAll()
 
     renderHash.value = crypto.randomUUID()
-  })
+  }
 
   function stripVueGeneratedTags(html: string): string {
     let output = html
@@ -48,7 +51,7 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
                   window.addEventListener('load', sendHeight);
                   window.addEventListener('resize', sendHeight);
                 <\/script>
-                <style>* { margin: 0; padding: 0; box-sizing: border-box; } html, body { width: 100%; overflow: hidden;}</style>
+                <style>* { margin: 0; padding: 0; box-sizing: border-box; } html, body { width: 100%; overflow: hidden; padding: 0}</style>
                 </head>
                 <body>${htmlString.value}</body>
                 </html>`
@@ -74,5 +77,6 @@ export function useHtmlPreview(domElement: MaybeRefOrGetter, root: string = 'tab
     iframeSrcDoc,
     iframeHeight,
     renderHash,
+    render,
   }
 }

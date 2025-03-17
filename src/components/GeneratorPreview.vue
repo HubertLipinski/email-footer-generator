@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import 'prismjs/themes/prism-tomorrow.min.css'
 import { useTemplateRef } from 'vue'
-import MinimalTemplate from '@/components/templates/MinimalTemplate.vue'
 import { useHtmlPreview } from '@/composables/useHtmlPreview.ts'
 import { useClipboard } from '@/composables/useClipboard.ts'
 import { useDownloadFile } from '@/composables/useDownloadFile.ts'
+import { useTranslation } from '@/composables/useTranslation.ts'
+import { useConfiguratorStore } from '@/stores/configurator.ts'
+import { storeToRefs } from 'pinia'
 
 import DownloadIcon from '~icons/material-symbols/download'
 import CopyIcon from '~icons/material-symbols/content-copy-outline'
 import SpinIcon from '~icons/svg-spinners/180-ring-with-bg'
-import { useTranslation } from '@/composables/useTranslation.ts'
 
-const template = useTemplateRef('footerPreview')
-const renderHash = crypto.randomUUID()
+const { t } = useTranslation()
 
-const { htmlString, humanReadable, iframeSrcDoc, iframeHeight } = useHtmlPreview(template)
+const templateRef = useTemplateRef('footerPreview')
+
+const { htmlString, humanReadable, iframeSrcDoc, iframeHeight, renderHash } = useHtmlPreview(templateRef)
 const { codeCopied, copy } = useClipboard()
 const { isDownloading, downloadFile } = useDownloadFile()
 
@@ -22,18 +24,22 @@ function downloadHtml() {
   downloadFile(htmlString, `generated-footer-${crypto.randomUUID()}.html`)
 }
 
-const { t } = useTranslation()
+const store = useConfiguratorStore()
+const { template } = storeToRefs(store)
 </script>
 
 <template>
   <div>
     <h2 class="text-xl font-semibold mb-6">{{ t('home.preview') }}</h2>
+    <p class="py-2">
+      {{ t('preview.selectedTemplate') }}:
+      <span class="capitalize text-secondary font-medium">{{ t(`template.${template.selected.name}`) }}</span>
+    </p>
     <div class="bg-card rounded-lg">
       <div class="border-0 rounded-md">
         <div class="align-middle" v-show="false">
           <div ref="footerPreview">
-            <!--          TODO: Toggle between templates -->
-            <MinimalTemplate :key="renderHash" />
+            <component :is="template.selected.component" :key="renderHash" />
           </div>
         </div>
         <div class="w-full pb-6" tabindex="-1">
@@ -45,7 +51,7 @@ const { t } = useTranslation()
             tabindex="-1"
           />
         </div>
-        <div class="flex justify-between pb-4" tabindex="0">
+        <div class="flex justify-between pb-4" tabindex="-1">
           <h3>{{ t('preview.htmlCode') }}</h3>
 
           <span class="tooltip break-all" :data-tip="t('preview.minified')">
@@ -54,7 +60,7 @@ const { t } = useTranslation()
         </div>
         <div class="w-full bg-neutral text-sm rounded-lg text-white focus:outline-none overflow-x-hidden" v-show="true">
           <pre class="focus:outline-none max-h-[350px]"><code
-          class="block w-3.5 language-html">{{ humanReadable }}</code></pre>
+            class="block w-3.5 language-html">{{ humanReadable }}</code></pre>
         </div>
       </div>
       <div class="mt-6 flex justify-end gap-x-4">
@@ -84,6 +90,6 @@ pre {
 }
 
 iframe {
-  //pointer-events: none;
+  /*pointer-events: none;*/
 }
 </style>

@@ -1,14 +1,28 @@
-import { ref } from 'vue'
+import { type Component, ref, shallowRef } from 'vue'
 import { defineStore } from 'pinia'
 import { type PersonalConfig, type SocialOption, TextAlignment } from '@/types/configurator.ts'
+import TemplateDefault from '@/components/templates/TemplateDefault.vue'
+import { TEMPLATE_TO_STYLES, THEME_OPTIONS, type ThemeOption } from '@/types/themeOptions.ts'
 
 export const useConfiguratorStore = defineStore('configurator', () => {
+  const template = ref({
+    selected: {
+      name: THEME_OPTIONS.Default,
+      component: shallowRef<Component>(TemplateDefault),
+    },
+  })
+
   const personal = ref<PersonalConfig>({
-    name: 'John Doe',
-    position: 'Software Engineer',
-    email: 'mail@example.com',
-    company: '',
-    website: '',
+    name: 'John Smith',
+    position: 'Marketing Manager',
+    email: 'john.smith@example.com',
+    company: 'Example Corp',
+    website: 'https://example-website.com',
+    phone: '123 456 789',
+    image: {
+      enabled: true,
+      url: 'https://placehold.co/400',
+    },
   })
 
   const social = ref<{ enabled: boolean; selected: SocialOption[] }>({
@@ -20,6 +34,7 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     fontFamily: 'Arial',
     backgroundColor: '#ffffff',
     textColor: '#000000',
+    accentColor: '#0047e1',
     fontSize: 14,
     alignment: TextAlignment.LEFT,
   })
@@ -33,5 +48,12 @@ export const useConfiguratorStore = defineStore('configurator', () => {
     },
   })
 
-  return { personal, social, styles, additional }
+  function updateTemplateStyles(template: ThemeOption): void {
+    const styleObject = TEMPLATE_TO_STYLES[template]
+
+    Object.assign(styles.value, styleObject.styles)
+    Object.assign(additional.value.disclaimer, styleObject.additional.disclaimer)
+  }
+
+  return { template, personal, social, styles, additional, updateTemplateStyles }
 })

@@ -1,5 +1,6 @@
 import { useI18n } from 'vue-i18n'
 import { onMounted, ref, watch } from 'vue'
+import { type ZodErrorMap, ZodIssueCode } from 'zod'
 
 const LOCAL_STORAGE_LANGUAGE = 'app-lang'
 
@@ -36,9 +37,31 @@ export function useTranslation() {
     }
   })
 
+  const zodI18nErrorMap = (): ZodErrorMap => {
+    return (issue, ctx) => {
+      switch (issue.code) {
+        case ZodIssueCode.invalid_type:
+          return { message: t('validation.required') }
+
+        case ZodIssueCode.too_small:
+          return { message: t('validation.required') }
+
+        case ZodIssueCode.invalid_string:
+          return { message: t(`validation.invalid_${issue.validation}`) }
+
+        case ZodIssueCode.custom:
+          return { message: t(`validation.${issue.message ?? 'custom'}`) }
+
+        default:
+          return { message: ctx.defaultError }
+      }
+    }
+  }
+
   return {
     t,
     selected,
     availableLocales,
+    zodI18nErrorMap,
   }
 }

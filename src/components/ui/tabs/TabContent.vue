@@ -33,7 +33,7 @@ const isActive = computed(() => tabsProvider.activeTab.value === props.title)
 
 <template>
   <div
-    class="tab-content"
+    class="tab-content pt-2 pb-1"
     v-show="isActive"
     role="tabpanel"
     :id="`tabPanel-${props.title}`"

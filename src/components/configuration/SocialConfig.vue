@@ -2,17 +2,19 @@
 import { useConfiguratorStore } from '@/stores/configurator.ts'
 import { storeToRefs } from 'pinia'
 import { useTranslation } from '@/composables/useTranslation.ts'
-import { type Component, onMounted } from 'vue'
-import { ref } from 'vue'
+import { type Component, onMounted, ref, watch } from 'vue'
 import type { SocialOption } from '@/types/configurator.ts'
 import Draggable from 'vuedraggable'
+import { useForm } from 'vee-validate'
+import { toTypedSchema } from '@vee-validate/zod'
+import { z } from 'zod'
 
 import IconFacebook from '~icons/mdi/facebook-box'
 import IconX from '~icons/ri/twitter-x-fill'
 import IconLinkedIn from '~icons/mdi/linkedin'
 import IconInstagram from '~icons/mdi/instagram'
 
-const { t } = useTranslation()
+const { t, selected } = useTranslation()
 
 const socialIcons: Record<string, Component> = {
   facebook: IconFacebook,
@@ -43,7 +45,7 @@ const socialOptions = ref<Record<string, SocialOption>>({
   instagram: {
     label: 'Instagram',
     value: 'https://instagram.com/your-profile',
-    icon: 'https://api.iconify.design/mdi:instagram.svg', // ?color=%23C13584
+    icon: 'https://api.iconify.design/mdi:instagram.svg',
     color: '#C13584',
   },
 })
@@ -62,6 +64,30 @@ onMounted(() => {
     social.value.selected.push(socialOptions.value['twitter'])
   }
 })
+
+const schema = z.object({
+  value: z.string().nonempty().url(),
+})
+
+const { validate } = useForm({
+  validationSchema: toTypedSchema(schema),
+  validateOnMount: true,
+})
+
+const validateURL = (value: string) => {
+  return schema.safeParse({ value })
+}
+
+const handleValidation = (value: string, label: string) => {
+  const result = validateURL(value)
+  const element = social.value.selected.find((option) => option.label === label)
+
+  if (!element) return
+
+  element.error = result.success ? '' : 'invalid_url'
+}
+
+watch(selected, () => validate())
 </script>
 
 <template>
@@ -94,29 +120,41 @@ onMounted(() => {
         </div>
       </fieldset>
 
-      <Draggable v-model="social.selected" item-key="label" handle=".drag-handle" tag="div" class="overflow-hidden">
+      <Draggable
+        v-model="social.selected"
+        item-key="label"
+        handle=".drag-handle"
+        tag="div"
+        class="overflow-hidden pt-2"
+      >
         <template #item="{ element, index }">
-          <div class="flex w-full items-start gap-2 pt-4">
-            <span class="drag-handle cursor-move text-lg pt-2.25 pr-2">
+          <div class="flex w-full items-start gap-2 pt-4 py-1">
+            <span class="drag-handle cursor-move text-lg pr-2 pt-[10px]">
               <i-system-uicons-drag-vertical />
             </span>
-            <label class="input grow-1 mr-1">
-              <component :is="getSocialComponent(element)" :style="{ color: element.color }" />
-              <input
-                type="url"
-                :id="`social-${index}`"
-                required
-                pattern="^(https?://)?([a-zA-Z0-9]([a-zA-Z0-9-].*[a-zA-Z0-9])?.)+[a-zA-Z].*$"
-                title="Must be valid URL"
-                v-model.trim="element.value"
-              />
-            </label>
+            <div class="flex flex-col w-full gap-y-2">
+              <div class="inline-flex gap-2">
+                <label class="input grow-1 mr-1">
+                  <component :is="getSocialComponent(element)" :style="{ color: element.color }" />
+                  <input
+                    type="url"
+                    :id="`social-${index}`"
+                    v-model.trim="element.value"
+                    @blur="handleValidation(element.value, element.label)"
+                  />
+                </label>
 
-            <input
-              type="color"
-              class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
-              v-model="element.color"
-            />
+                <input
+                  type="color"
+                  class="input p-0 m-0 border-0 shadow-none max-w-18 color-picker"
+                  v-model="element.color"
+                  v-show="false"
+                />
+              </div>
+              <div v-if="element.error" class="inline-flex text-error text-xs">
+                {{ t(`validation.${element.error}`) }}
+              </div>
+            </div>
           </div>
         </template>
       </Draggable>

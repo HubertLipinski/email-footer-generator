@@ -30,6 +30,9 @@ const { t } = useTranslation()
     <RouterLink to="/preview" role="tab" class="tab flex-grow" activeClass="tab-active">
       {{ t('home.preview') }}
     </RouterLink>
+    <!--    <RouterLink to="/tmp" role="tab" class="tab flex-grow" activeClass="tab-active">-->
+    <!--      TMP-->
+    <!--    </RouterLink>-->
   </div>
 </template>
 

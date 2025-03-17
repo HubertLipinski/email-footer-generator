@@ -6,6 +6,7 @@
   },
   "editor": {
     "configureYourEmailFooter": "Skonfiguruj swoją stopkę email",
+    "template": "Szablon",
     "personal": "Dane",
     "social": "Linki",
     "styles": "Style",
@@ -27,7 +28,12 @@
       "left": "Lewej",
       "center": "Środka",
       "right": "Prawej",
-      "disclaimer": "Klauzula"
+      "disclaimer": "Klauzula",
+      "selectTemplate": "Wybierz szablon",
+      "accentColor": "Kolor akcentu",
+      "phone": "Numer telefonu",
+      "includeImage": "Dołącz zdjęcie lub logo",
+      "imageUrl": "URL obrazka"
     }
   },
   "preview": {
@@ -37,6 +43,21 @@
     "copy": "Kopiuj",
     "wait": "Czekaj...",
     "done": "Gotowe!",
-    "minified": "Wersja zminifikowana"
+    "minified": "Wersja zminifikowana",
+    "selectedTemplate": "Wybrany szablon"
+  },
+  "template": {
+    "default": "Domyślny",
+    "corporate": "Korporacyjny",
+    "creative": "Kreatywny",
+    "luxury": "Luksusowy",
+    "minimalistic": "Minimalistyczny",
+    "modern": "Nowoczesny"
+  },
+  "validation": {
+    "required": "Pole jest wymagane",
+    "invalid_url": "Podaj poprawny URL",
+    "invalid_regex": "Podaj poprawny format danych",
+    "invalid_email": "Podaj poprawny adres email"
   }
 }
