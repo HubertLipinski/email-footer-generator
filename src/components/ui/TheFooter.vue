@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import { useTranslation } from '@/composables/useTranslation.ts'
 
 const personalUrl = ref(import.meta.env.VITE_PERSONAL_URL)
+const githubUrl = ref(import.meta.env.VITE_GITHUB_URL)
 
 const { t } = useTranslation()
 </script>
@@ -15,11 +16,7 @@ const { t } = useTranslation()
         <span class="font-mono">&copy; {{ new Date().getFullYear() }}</span> by
         <a :href="personalUrl" target="_blank" class="link link-hover hover:text-primary font-bold">Hubert Lipiński</a>
       </p>
-      <a
-        href="https://github.com/HubertLipinski"
-        target="_blank"
-        class="link link-hover flex items-center justify-center hover:text-primary"
-      >
+      <a :href="githubUrl" target="_blank" class="link link-hover flex items-center justify-center hover:text-primary">
         <IconGithub class="mr-1" />
         {{ t('home.sourceCode') }}
       </a>
