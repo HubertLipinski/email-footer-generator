@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import TabsWrapper from '@/components/ui/tabs/TabsWrapper.vue'
 import TabContent from '@/components/ui/tabs/TabContent.vue'
-import type { useTranslation } from '@/composables/useTranslation'
 
 const wrapperConfig = [
   {
@@ -33,15 +32,14 @@ const mockI18n = vi.hoisted(() => {
     composable: vi.fn().mockReturnValue({
       t: (str: string) => str,
     }),
-  };
-});
+  }
+})
 
 vi.mock('@/composables/useTranslation.ts', () => {
   return {
     useTranslation: mockI18n.composable,
   }
-});
-
+})
 
 describe('the use of TabsContent with TabsWrapper', () => {
   it('renders the tab titles', async () => {
