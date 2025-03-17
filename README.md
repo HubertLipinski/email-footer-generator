@@ -65,7 +65,14 @@ Email Footer Generator is an online tool that allows users to quickly and easily
 
 <br/>
 
-[![Generated Footer Preview][product-screenshot]](https://email-footer-generator.vercel.app/)
+
+<img src="/static/demo.gif" width="400">
+
+### Available templates: 
+|       <img width="600" alt="Template default" src="/src/assets/templates/default.webp">  <br/> Default 	        | <img width="600" alt="Template creative" src="/src/assets/templates/creative.webp">  <br/> Creative 	 |
+|:---------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------:|
+|     <img width="600" alt="Template corporate" src="/src/assets/templates/corporate.webp">  <br/> Corporate      |   <img width="600" alt="Template luxury" src="/src/assets/templates/luxury.webp">  <br/> Luxury   	   |
+| <img width="600" alt="Template minimalistic" src="/src/assets/templates/minimalistic.webp">  <br/> Minimalistic |                                                                                                       |
 
 
 ### Built With
@@ -118,19 +125,18 @@ Project Link: [https://github.com/HubertLipinski/email-footer-generator](https:/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/HubertLipinski/email-footer-generator.svg?style=for-the-badge
 [contributors-url]: https://github.com/HubertLipinski/email-footer-generator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/HubertLipinski/email-footer-generator.svg?style=for-the-badge
 [forks-url]: https://github.com/HubertLipinski/email-footer-generator/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/HubertLipinski/email-footer-generator.svg?style=for-the-badge
 [stars-url]: https://github.com/HubertLipinski/email-footer-generator/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/HubertLipinski/email-footer-generator.svg?style=for-the-badge
 [issues-url]: https://github.com/HubertLipinski/email-footer-generator/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/hubert-lipinski/
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/HubertLipinski/email-footer-generator/blob/master/LICENSE.txt
-[product-screenshot]: src/assets/preview.png
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [TS-logo]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
