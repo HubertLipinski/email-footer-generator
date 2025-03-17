@@ -137,7 +137,6 @@ Project Link: [https://github.com/HubertLipinski/email-footer-generator](https:/
 [linkedin-url]: https://www.linkedin.com/in/hubert-lipinski/
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/HubertLipinski/email-footer-generator/blob/master/LICENSE.txt
-[product-screenshot]: static/demo.gif
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [TS-logo]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
