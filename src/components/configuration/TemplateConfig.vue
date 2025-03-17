@@ -85,7 +85,6 @@ function selectTemplate({ name, component }: { name: string; component: Componen
             : 'border-1 border-transparent'
         "
         @click="selectTemplate(tmpl)"
-        :disabled="tmpl.disabled"
       >
         <img :src="tmpl.img" :alt="`Theme ${tmpl.name}`" class="rounded-sm" />
         <span class="py-1">{{ t(`template.${tmpl.name}`) }}</span>
