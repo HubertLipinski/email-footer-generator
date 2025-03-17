@@ -66,9 +66,9 @@ Email Footer Generator is an online tool that allows users to quickly and easily
 <br/>
 
 
-
 <img src="/static/demo.gif" width="400">
 
+### Available templates: 
 |       <img width="600" alt="Template default" src="/src/assets/templates/default.webp">  <br/> Default 	        | <img width="600" alt="Template creative" src="/src/assets/templates/creative.webp">  <br/> Creative 	 |
 |:---------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------:|
 |     <img width="600" alt="Template corporate" src="/src/assets/templates/corporate.webp">  <br/> Corporate      |   <img width="600" alt="Template luxury" src="/src/assets/templates/luxury.webp">  <br/> Luxury   	   |
