@@ -59,11 +59,11 @@ const { t } = useTranslation()
     <div class="inline-flex gap-2">
       <input
         type="color"
-        id="textColor"
+        id="accentColor"
         class="input flex-none max-w-18 p-0 m-0 border-0 shadow-none color-picker"
         v-model="styles.accentColor"
       />
-      <label for="textColor" class="label text-base-content text-base hover:cursor-text">
+      <label for="accentColor" class="label text-base-content text-base hover:cursor-text">
         {{ styles.accentColor }}
       </label>
     </div>
